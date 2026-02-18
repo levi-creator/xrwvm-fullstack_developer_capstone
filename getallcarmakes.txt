@@ -1,0 +1,3557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="robots" content="NONE,NOARCHIVE">
+  <title>OperationalError
+          at /djangoapp/get_cars</title>
+  <style type="text/css">
+    html * { padding:0; margin:0; }
+    body * { padding:10px 20px; }
+    body * * { padding:0; }
+    body { font:small sans-serif; background-color:#fff; color:#000; }
+    body>div { border-bottom:1px solid #ddd; }
+    h1 { font-weight:normal; }
+    h2 { margin-bottom:.8em; }
+    h3 { margin:1em 0 .5em 0; }
+    h4 { margin:0 0 .5em 0; font-weight: normal; }
+    code, pre { font-size: 100%; white-space: pre-wrap; }
+    table { border:1px solid #ccc; border-collapse: collapse; width:100%; background:white; }
+    tbody td, tbody th { vertical-align:top; padding:2px 3px; }
+    thead th {
+      padding:1px 6px 1px 3px; background:#fefefe; text-align:left;
+      font-weight:normal; font-size:11px; border:1px solid #ddd;
+    }
+    tbody th { width:12em; text-align:right; color:#666; padding-right:.5em; }
+    table.vars { margin:5px 0 2px 40px; }
+    table.vars td, table.req td { font-family:monospace; }
+    table td.code { width:100%; }
+    table td.code pre { overflow:hidden; }
+    table.source th { color:#666; }
+    table.source td { font-family:monospace; white-space:pre; border-bottom:1px solid #eee; }
+    ul.traceback { list-style-type:none; color: #222; }
+    ul.traceback li.frame { padding-bottom:1em; color:#4f4f4f; }
+    ul.traceback li.user { background-color:#e0e0e0; color:#000 }
+    div.context { padding:10px 0; overflow:hidden; }
+    div.context ol { padding-left:30px; margin:0 10px; list-style-position: inside; }
+    div.context ol li { font-family:monospace; white-space:pre; color:#777; cursor:pointer; padding-left: 2px; }
+    div.context ol li pre { display:inline; }
+    div.context ol.context-line li { color:#464646; background-color:#dfdfdf; padding: 3px 2px; }
+    div.context ol.context-line li span { position:absolute; right:32px; }
+    .user div.context ol.context-line li { background-color:#bbb; color:#000; }
+    .user div.context ol li { color:#666; }
+    div.commands { margin-left: 40px; }
+    div.commands a { color:#555; text-decoration:none; }
+    .user div.commands a { color: black; }
+    #summary { background: #ffc; }
+    #summary h2 { font-weight: normal; color: #666; }
+    #explanation { background:#eee; }
+    #template, #template-not-exist { background:#f6f6f6; }
+    #template-not-exist ul { margin: 0 0 10px 20px; }
+    #template-not-exist .postmortem-section { margin-bottom: 3px; }
+    #unicode-hint { background:#eee; }
+    #traceback { background:#eee; }
+    #requestinfo { background:#f6f6f6; padding-left:120px; }
+    #summary table { border:none; background:transparent; }
+    #requestinfo h2, #requestinfo h3 { position:relative; margin-left:-100px; }
+    #requestinfo h3 { margin-bottom:-1em; }
+    .error { background: #ffc; }
+    .specific { color:#cc3300; font-weight:bold; }
+    h2 span.commands { font-size:.7em; font-weight:normal; }
+    span.commands a:link {color:#5E5694;}
+    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0; }
+    .append-bottom { margin-bottom: 10px; }
+    .fname { user-select: all; }
+  </style>
+  
+  <script>
+    function hideAll(elems) {
+      for (var e = 0; e < elems.length; e++) {
+        elems[e].style.display = 'none';
+      }
+    }
+    window.onload = function() {
+      hideAll(document.querySelectorAll('table.vars'));
+      hideAll(document.querySelectorAll('ol.pre-context'));
+      hideAll(document.querySelectorAll('ol.post-context'));
+      hideAll(document.querySelectorAll('div.pastebin'));
+    }
+    function toggle() {
+      for (var i = 0; i < arguments.length; i++) {
+        var e = document.getElementById(arguments[i]);
+        if (e) {
+          e.style.display = e.style.display == 'none' ? 'block': 'none';
+        }
+      }
+      return false;
+    }
+    function varToggle(link, id) {
+      toggle('v' + id);
+      var s = link.getElementsByTagName('span')[0];
+      var uarr = String.fromCharCode(0x25b6);
+      var darr = String.fromCharCode(0x25bc);
+      s.textContent = s.textContent == uarr ? darr : uarr;
+      return false;
+    }
+    function switchPastebinFriendly(link) {
+      s1 = "Switch to copy-and-paste view";
+      s2 = "Switch back to interactive view";
+      link.textContent = link.textContent.trim() == s1 ? s2: s1;
+      toggle('browserTraceback', 'pastebinTraceback');
+      return false;
+    }
+  </script>
+  
+</head>
+<body>
+<div id="summary">
+  <h1>OperationalError
+       at /djangoapp/get_cars</h1>
+  <pre class="exception_value">no such table: djangoapp_carmake</pre>
+  <table class="meta">
+
+    <tr>
+      <th>Request Method:</th>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <th>Request URL:</th>
+      <td>http://localhost:8080/djangoapp/get_cars</td>
+    </tr>
+
+    <tr>
+      <th>Django Version:</th>
+      <td>3.2.5</td>
+    </tr>
+
+    <tr>
+      <th>Exception Type:</th>
+      <td>OperationalError</td>
+    </tr>
+
+
+    <tr>
+      <th>Exception Value:</th>
+      <td><pre>no such table: djangoapp_carmake</pre></td>
+    </tr>
+
+
+    <tr>
+      <th>Exception Location:</th>
+      <td><span class="fname">/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py</span>, line 423, in execute</td>
+    </tr>
+
+    <tr>
+      <th>Python Executable:</th>
+      <td>/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/bin/python3</td>
+    </tr>
+    <tr>
+      <th>Python Version:</th>
+      <td>3.11.14</td>
+    </tr>
+    <tr>
+      <th>Python Path:</th>
+      <td><pre>[&#x27;/home/project/xrwvm-fullstack_developer_capstone/server&#x27;,
+ &#x27;/usr/lib/python311.zip&#x27;,
+ &#x27;/usr/lib/python3.11&#x27;,
+ &#x27;/usr/lib/python3.11/lib-dynload&#x27;,
+ &#x27;/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages&#x27;,
+ &#x27;/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/setuptools/_vendor&#x27;]</pre></td>
+    </tr>
+    <tr>
+      <th>Server time:</th>
+      <td>Wed, 18 Feb 2026 17:30:28 +0000</td>
+    </tr>
+  </table>
+</div>
+
+
+
+
+<div id="traceback">
+  <h2>Traceback <span class="commands"><a href="#" onclick="return switchPastebinFriendly(this);">
+    Switch to copy-and-paste view</a></span>
+  </h2>
+  <div id="browserTraceback">
+    <ul class="traceback">
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/backends/utils.py</code>, line 84, in _execute
+          
+
+          
+            <div class="context" id="c130536795881344">
+              
+                <ol start="77" class="pre-context" id="pre130536795881344">
+                
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>    def _execute(self, sql, params, *ignored_wrapper_args):</pre></li>
+                
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
+                
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>        with self.db.wrap_database_errors:</pre></li>
+                
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>            if params is None:</pre></li>
+                
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>                # params default might be backend specific.</pre></li>
+                
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>                return self.cursor.execute(sql)</pre></li>
+                
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>            else:</pre></li>
+                
+                </ol>
+              
+              <ol start="84" class="context-line">
+                <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>                return self.cursor.execute(sql, params)</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='85' class="post-context" id="post130536795881344">
+                  
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>    def _executemany(self, sql, param_list, *ignored_wrapper_args):</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>        with self.db.wrap_database_errors:</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>            return self.cursor.executemany(sql, param_list)</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre></pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '130536795881344')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v130536795881344">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>ignored_wrapper_args</td>
+                    <td class="code"><pre>(False,
+ {&#x27;connection&#x27;: &lt;django.db.backends.sqlite3.base.DatabaseWrapper object at 0x76b8f7591110&gt;,
+  &#x27;cursor&#x27;: &lt;django.db.backends.utils.CursorDebugWrapper object at 0x76b8f75920d0&gt;})</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>params</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.backends.utils.CursorDebugWrapper object at 0x76b8f75920d0&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>sql</td>
+                    <td class="code"><pre>&#x27;SELECT COUNT(*) AS &quot;__count&quot; FROM &quot;djangoapp_carmake&quot;&#x27;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py</code>, line 423, in execute
+          
+
+          
+            <div class="context" id="c130536795881216">
+              
+                <ol start="416" class="pre-context" id="pre130536795881216">
+                
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>    This fixes it -- but note that if you want to use a literal &quot;%s&quot; in a query,</pre></li>
+                
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>    you&#x27;ll need to use &quot;%%s&quot;.</pre></li>
+                
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>    &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>    def execute(self, query, params=None):</pre></li>
+                
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>        if params is None:</pre></li>
+                
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>            return Database.Cursor.execute(self, query)</pre></li>
+                
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>        query = self.convert_query(query)</pre></li>
+                
+                </ol>
+              
+              <ol start="423" class="context-line">
+                <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>        return Database.Cursor.execute(self, query, params)</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='424' class="post-context" id="post130536795881216">
+                  
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>    def executemany(self, query, param_list):</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>        query = self.convert_query(query)</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>        return Database.Cursor.executemany(self, query, param_list)</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>    def convert_query(self, query):</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '130536795881216')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v130536795881216">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>params</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>query</td>
+                    <td class="code"><pre>&#x27;SELECT COUNT(*) AS &quot;__count&quot; FROM &quot;djangoapp_carmake&quot;&#x27;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.backends.sqlite3.base.SQLiteCursorWrapper object at 0x76b8f6445c70&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+          <li><h3>
+          
+            The above exception (no such table: djangoapp_carmake) was the direct cause of the following exception:
+          
+        </h3></li>
+        
+        <li class="frame django">
+          
+            <code class="fname">/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/core/handlers/exception.py</code>, line 47, in inner
+          
+
+          
+            <div class="context" id="c130536795876224">
+              
+                <ol start="40" class="pre-context" id="pre130536795876224">
+                
+                  <li onclick="toggle('pre130536795876224', 'post130536795876224')"><pre>                response = await sync_to_async(response_for_exception, thread_sensitive=False)(request, exc)</pre></li>
+                
+                  <li onclick="toggle('pre130536795876224', 'post130536795876224')"><pre>            return response</pre></li>
+                
+                  <li onclick="toggle('pre130536795876224', 'post130536795876224')"><pre>        return inner</pre></li>
+                
+                  <li onclick="toggle('pre130536795876224', 'post130536795876224')"><pre>    else:</pre></li>
+                
+                  <li onclick="toggle('pre130536795876224', 'post130536795876224')"><pre>        @wraps(get_response)</pre></li>
+                
+                  <li onclick="toggle('pre130536795876224', 'post130536795876224')"><pre>        def inner(request):</pre></li>
+                
+                  <li onclick="toggle('pre130536795876224', 'post130536795876224')"><pre>            try:</pre></li>
+                
+                </ol>
+              
+              <ol start="47" class="context-line">
+                <li onclick="toggle('pre130536795876224', 'post130536795876224')"><pre>                response = get_response(request)</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='48' class="post-context" id="post130536795876224">
+                  
+                  <li onclick="toggle('pre130536795876224', 'post130536795876224')"><pre>            except Exception as exc:</pre></li>
+                  
+                  <li onclick="toggle('pre130536795876224', 'post130536795876224')"><pre>                response = response_for_exception(request, exc)</pre></li>
+                  
+                  <li onclick="toggle('pre130536795876224', 'post130536795876224')"><pre>            return response</pre></li>
+                  
+                  <li onclick="toggle('pre130536795876224', 'post130536795876224')"><pre>        return inner</pre></li>
+                  
+                  <li onclick="toggle('pre130536795876224', 'post130536795876224')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre130536795876224', 'post130536795876224')"><pre></pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '130536795876224')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v130536795876224">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>exc</td>
+                    <td class="code"><pre>OperationalError(&#x27;no such table: djangoapp_carmake&#x27;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>get_response</td>
+                    <td class="code"><pre>&lt;bound method BaseHandler._get_response of &lt;django.core.handlers.wsgi.WSGIHandler object at 0x76b8fd04b8d0&gt;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>request</td>
+                    <td class="code"><pre>&lt;WSGIRequest: GET &#x27;/djangoapp/get_cars&#x27;&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/core/handlers/base.py</code>, line 181, in _get_response
+          
+
+          
+            <div class="context" id="c130536795878976">
+              
+                <ol start="174" class="pre-context" id="pre130536795878976">
+                
+                  <li onclick="toggle('pre130536795878976', 'post130536795878976')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre130536795878976', 'post130536795878976')"><pre>        if response is None:</pre></li>
+                
+                  <li onclick="toggle('pre130536795878976', 'post130536795878976')"><pre>            wrapped_callback = self.make_view_atomic(callback)</pre></li>
+                
+                  <li onclick="toggle('pre130536795878976', 'post130536795878976')"><pre>            # If it is an asynchronous view, run it in a subthread.</pre></li>
+                
+                  <li onclick="toggle('pre130536795878976', 'post130536795878976')"><pre>            if asyncio.iscoroutinefunction(wrapped_callback):</pre></li>
+                
+                  <li onclick="toggle('pre130536795878976', 'post130536795878976')"><pre>                wrapped_callback = async_to_sync(wrapped_callback)</pre></li>
+                
+                  <li onclick="toggle('pre130536795878976', 'post130536795878976')"><pre>            try:</pre></li>
+                
+                </ol>
+              
+              <ol start="181" class="context-line">
+                <li onclick="toggle('pre130536795878976', 'post130536795878976')"><pre>                response = wrapped_callback(request, *callback_args, **callback_kwargs)</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='182' class="post-context" id="post130536795878976">
+                  
+                  <li onclick="toggle('pre130536795878976', 'post130536795878976')"><pre>            except Exception as e:</pre></li>
+                  
+                  <li onclick="toggle('pre130536795878976', 'post130536795878976')"><pre>                response = self.process_exception_by_middleware(e, request)</pre></li>
+                  
+                  <li onclick="toggle('pre130536795878976', 'post130536795878976')"><pre>                if response is None:</pre></li>
+                  
+                  <li onclick="toggle('pre130536795878976', 'post130536795878976')"><pre>                    raise</pre></li>
+                  
+                  <li onclick="toggle('pre130536795878976', 'post130536795878976')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre130536795878976', 'post130536795878976')"><pre>        # Complain if the view returned None (a common error).</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '130536795878976')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v130536795878976">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>callback</td>
+                    <td class="code"><pre>&lt;function get_cars at 0x76b8fc191d00&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>callback_args</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>callback_kwargs</td>
+                    <td class="code"><pre>{}</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>request</td>
+                    <td class="code"><pre>&lt;WSGIRequest: GET &#x27;/djangoapp/get_cars&#x27;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>response</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.core.handlers.wsgi.WSGIHandler object at 0x76b8fd04b8d0&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>wrapped_callback</td>
+                    <td class="code"><pre>&lt;function get_cars at 0x76b8fc191d00&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame user">
+          
+            <code class="fname">/home/project/xrwvm-fullstack_developer_capstone/server/djangoapp/views.py</code>, line 45, in get_cars
+          
+
+          
+            <div class="context" id="c130536795879872">
+              
+                <ol start="38" class="pre-context" id="pre130536795879872">
+                
+                  <li onclick="toggle('pre130536795879872', 'post130536795879872')"><pre>    ]</pre></li>
+                
+                  <li onclick="toggle('pre130536795879872', 'post130536795879872')"><pre>    return JsonResponse(data, safe=False)</pre></li>
+                
+                  <li onclick="toggle('pre130536795879872', 'post130536795879872')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre130536795879872', 'post130536795879872')"><pre># -------------------------</pre></li>
+                
+                  <li onclick="toggle('pre130536795879872', 'post130536795879872')"><pre># Car-related view</pre></li>
+                
+                  <li onclick="toggle('pre130536795879872', 'post130536795879872')"><pre># -------------------------</pre></li>
+                
+                  <li onclick="toggle('pre130536795879872', 'post130536795879872')"><pre>def get_cars(request):</pre></li>
+                
+                </ol>
+              
+              <ol start="45" class="context-line">
+                <li onclick="toggle('pre130536795879872', 'post130536795879872')"><pre>    count = CarMake.objects.count()</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='46' class="post-context" id="post130536795879872">
+                  
+                  <li onclick="toggle('pre130536795879872', 'post130536795879872')"><pre>    if count == 0:</pre></li>
+                  
+                  <li onclick="toggle('pre130536795879872', 'post130536795879872')"><pre>        initiate()</pre></li>
+                  
+                  <li onclick="toggle('pre130536795879872', 'post130536795879872')"><pre>    car_models = CarModel.objects.select_related(&#x27;car_make&#x27;)</pre></li>
+                  
+                  <li onclick="toggle('pre130536795879872', 'post130536795879872')"><pre>    cars = [{&quot;CarModel&quot;: cm.name, &quot;CarMake&quot;: cm.car_make.name} for cm in car_models]</pre></li>
+                  
+                  <li onclick="toggle('pre130536795879872', 'post130536795879872')"><pre>    return JsonResponse({&quot;CarModels&quot;: cars})</pre></li>
+                  
+                  <li onclick="toggle('pre130536795879872', 'post130536795879872')"><pre></pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '130536795879872')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v130536795879872">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>request</td>
+                    <td class="code"><pre>&lt;WSGIRequest: GET &#x27;/djangoapp/get_cars&#x27;&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/models/manager.py</code>, line 85, in manager_method
+          
+
+          
+            <div class="context" id="c130536795870080">
+              
+                <ol start="78" class="pre-context" id="pre130536795870080">
+                
+                  <li onclick="toggle('pre130536795870080', 'post130536795870080')"><pre>    def check(self, **kwargs):</pre></li>
+                
+                  <li onclick="toggle('pre130536795870080', 'post130536795870080')"><pre>        return []</pre></li>
+                
+                  <li onclick="toggle('pre130536795870080', 'post130536795870080')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre130536795870080', 'post130536795870080')"><pre>    @classmethod</pre></li>
+                
+                  <li onclick="toggle('pre130536795870080', 'post130536795870080')"><pre>    def _get_queryset_methods(cls, queryset_class):</pre></li>
+                
+                  <li onclick="toggle('pre130536795870080', 'post130536795870080')"><pre>        def create_method(name, method):</pre></li>
+                
+                  <li onclick="toggle('pre130536795870080', 'post130536795870080')"><pre>            def manager_method(self, *args, **kwargs):</pre></li>
+                
+                </ol>
+              
+              <ol start="85" class="context-line">
+                <li onclick="toggle('pre130536795870080', 'post130536795870080')"><pre>                return getattr(self.get_queryset(), name)(*args, **kwargs)</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='86' class="post-context" id="post130536795870080">
+                  
+                  <li onclick="toggle('pre130536795870080', 'post130536795870080')"><pre>            manager_method.__name__ = method.__name__</pre></li>
+                  
+                  <li onclick="toggle('pre130536795870080', 'post130536795870080')"><pre>            manager_method.__doc__ = method.__doc__</pre></li>
+                  
+                  <li onclick="toggle('pre130536795870080', 'post130536795870080')"><pre>            return manager_method</pre></li>
+                  
+                  <li onclick="toggle('pre130536795870080', 'post130536795870080')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre130536795870080', 'post130536795870080')"><pre>        new_methods = {}</pre></li>
+                  
+                  <li onclick="toggle('pre130536795870080', 'post130536795870080')"><pre>        for name, method in inspect.getmembers(queryset_class, predicate=inspect.isfunction):</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '130536795870080')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v130536795870080">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>args</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>kwargs</td>
+                    <td class="code"><pre>{}</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>name</td>
+                    <td class="code"><pre>&#x27;count&#x27;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.models.manager.Manager object at 0x76b8fc199a10&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/models/query.py</code>, line 412, in count
+          
+
+          
+            <div class="context" id="c130536795878912">
+              
+                <ol start="405" class="pre-context" id="pre130536795878912">
+                
+                  <li onclick="toggle('pre130536795878912', 'post130536795878912')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre130536795878912', 'post130536795878912')"><pre>        If the QuerySet is already fully cached, return the length of the</pre></li>
+                
+                  <li onclick="toggle('pre130536795878912', 'post130536795878912')"><pre>        cached results set to avoid multiple SELECT COUNT(*) calls.</pre></li>
+                
+                  <li onclick="toggle('pre130536795878912', 'post130536795878912')"><pre>        &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre130536795878912', 'post130536795878912')"><pre>        if self._result_cache is not None:</pre></li>
+                
+                  <li onclick="toggle('pre130536795878912', 'post130536795878912')"><pre>            return len(self._result_cache)</pre></li>
+                
+                  <li onclick="toggle('pre130536795878912', 'post130536795878912')"><pre></pre></li>
+                
+                </ol>
+              
+              <ol start="412" class="context-line">
+                <li onclick="toggle('pre130536795878912', 'post130536795878912')"><pre>        return self.query.get_count(using=self.db)</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='413' class="post-context" id="post130536795878912">
+                  
+                  <li onclick="toggle('pre130536795878912', 'post130536795878912')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre130536795878912', 'post130536795878912')"><pre>    def get(self, *args, **kwargs):</pre></li>
+                  
+                  <li onclick="toggle('pre130536795878912', 'post130536795878912')"><pre>        &quot;&quot;&quot;</pre></li>
+                  
+                  <li onclick="toggle('pre130536795878912', 'post130536795878912')"><pre>        Perform the query and return a single object matching the given</pre></li>
+                  
+                  <li onclick="toggle('pre130536795878912', 'post130536795878912')"><pre>        keyword arguments.</pre></li>
+                  
+                  <li onclick="toggle('pre130536795878912', 'post130536795878912')"><pre>        &quot;&quot;&quot;</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '130536795878912')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v130536795878912">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>Error in formatting: OperationalError: no such table: djangoapp_carmake</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/models/sql/query.py</code>, line 519, in get_count
+          
+
+          
+            <div class="context" id="c130536795881024">
+              
+                <ol start="512" class="pre-context" id="pre130536795881024">
+                
+                  <li onclick="toggle('pre130536795881024', 'post130536795881024')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre130536795881024', 'post130536795881024')"><pre>    def get_count(self, using):</pre></li>
+                
+                  <li onclick="toggle('pre130536795881024', 'post130536795881024')"><pre>        &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre130536795881024', 'post130536795881024')"><pre>        Perform a COUNT() query using the current filter constraints.</pre></li>
+                
+                  <li onclick="toggle('pre130536795881024', 'post130536795881024')"><pre>        &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre130536795881024', 'post130536795881024')"><pre>        obj = self.clone()</pre></li>
+                
+                  <li onclick="toggle('pre130536795881024', 'post130536795881024')"><pre>        obj.add_annotation(Count(&#x27;*&#x27;), alias=&#x27;__count&#x27;, is_summary=True)</pre></li>
+                
+                </ol>
+              
+              <ol start="519" class="context-line">
+                <li onclick="toggle('pre130536795881024', 'post130536795881024')"><pre>        number = obj.get_aggregation(using, [&#x27;__count&#x27;])[&#x27;__count&#x27;]</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='520' class="post-context" id="post130536795881024">
+                  
+                  <li onclick="toggle('pre130536795881024', 'post130536795881024')"><pre>        if number is None:</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881024', 'post130536795881024')"><pre>            number = 0</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881024', 'post130536795881024')"><pre>        return number</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881024', 'post130536795881024')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre130536795881024', 'post130536795881024')"><pre>    def has_filters(self):</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881024', 'post130536795881024')"><pre>        return self.where</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '130536795881024')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v130536795881024">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>obj</td>
+                    <td class="code"><pre>&lt;django.db.models.sql.query.Query object at 0x76b8f7591910&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.models.sql.query.Query object at 0x76b8f7591c10&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>using</td>
+                    <td class="code"><pre>&#x27;default&#x27;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/models/sql/query.py</code>, line 504, in get_aggregation
+          
+
+          
+            <div class="context" id="c130536795881088">
+              
+                <ol start="497" class="pre-context" id="pre130536795881088">
+                
+                  <li onclick="toggle('pre130536795881088', 'post130536795881088')"><pre>            self.extra = {}</pre></li>
+                
+                  <li onclick="toggle('pre130536795881088', 'post130536795881088')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre130536795881088', 'post130536795881088')"><pre>        outer_query.clear_ordering(True)</pre></li>
+                
+                  <li onclick="toggle('pre130536795881088', 'post130536795881088')"><pre>        outer_query.clear_limits()</pre></li>
+                
+                  <li onclick="toggle('pre130536795881088', 'post130536795881088')"><pre>        outer_query.select_for_update = False</pre></li>
+                
+                  <li onclick="toggle('pre130536795881088', 'post130536795881088')"><pre>        outer_query.select_related = False</pre></li>
+                
+                  <li onclick="toggle('pre130536795881088', 'post130536795881088')"><pre>        compiler = outer_query.get_compiler(using)</pre></li>
+                
+                </ol>
+              
+              <ol start="504" class="context-line">
+                <li onclick="toggle('pre130536795881088', 'post130536795881088')"><pre>        result = compiler.execute_sql(SINGLE)</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='505' class="post-context" id="post130536795881088">
+                  
+                  <li onclick="toggle('pre130536795881088', 'post130536795881088')"><pre>        if result is None:</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881088', 'post130536795881088')"><pre>            result = [None] * len(outer_query.annotation_select)</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881088', 'post130536795881088')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre130536795881088', 'post130536795881088')"><pre>        converters = compiler.get_converters(outer_query.annotation_select.values())</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881088', 'post130536795881088')"><pre>        result = next(compiler.apply_converters((result,), converters))</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881088', 'post130536795881088')"><pre></pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '130536795881088')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v130536795881088">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>added_aggregate_names</td>
+                    <td class="code"><pre>[&#x27;__count&#x27;]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>compiler</td>
+                    <td class="code"><pre>&lt;django.db.models.sql.compiler.SQLCompiler object at 0x76b8f7590690&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>existing_annotations</td>
+                    <td class="code"><pre>[]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>outer_query</td>
+                    <td class="code"><pre>&lt;django.db.models.sql.query.Query object at 0x76b8f7591910&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.models.sql.query.Query object at 0x76b8f7591910&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>using</td>
+                    <td class="code"><pre>&#x27;default&#x27;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/models/sql/compiler.py</code>, line 1175, in execute_sql
+          
+
+          
+            <div class="context" id="c130536795880320">
+              
+                <ol start="1168" class="pre-context" id="pre130536795880320">
+                
+                  <li onclick="toggle('pre130536795880320', 'post130536795880320')"><pre>            else:</pre></li>
+                
+                  <li onclick="toggle('pre130536795880320', 'post130536795880320')"><pre>                return</pre></li>
+                
+                  <li onclick="toggle('pre130536795880320', 'post130536795880320')"><pre>        if chunked_fetch:</pre></li>
+                
+                  <li onclick="toggle('pre130536795880320', 'post130536795880320')"><pre>            cursor = self.connection.chunked_cursor()</pre></li>
+                
+                  <li onclick="toggle('pre130536795880320', 'post130536795880320')"><pre>        else:</pre></li>
+                
+                  <li onclick="toggle('pre130536795880320', 'post130536795880320')"><pre>            cursor = self.connection.cursor()</pre></li>
+                
+                  <li onclick="toggle('pre130536795880320', 'post130536795880320')"><pre>        try:</pre></li>
+                
+                </ol>
+              
+              <ol start="1175" class="context-line">
+                <li onclick="toggle('pre130536795880320', 'post130536795880320')"><pre>            cursor.execute(sql, params)</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='1176' class="post-context" id="post130536795880320">
+                  
+                  <li onclick="toggle('pre130536795880320', 'post130536795880320')"><pre>        except Exception:</pre></li>
+                  
+                  <li onclick="toggle('pre130536795880320', 'post130536795880320')"><pre>            # Might fail for server-side cursors (e.g. connection closed)</pre></li>
+                  
+                  <li onclick="toggle('pre130536795880320', 'post130536795880320')"><pre>            cursor.close()</pre></li>
+                  
+                  <li onclick="toggle('pre130536795880320', 'post130536795880320')"><pre>            raise</pre></li>
+                  
+                  <li onclick="toggle('pre130536795880320', 'post130536795880320')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre130536795880320', 'post130536795880320')"><pre>        if result_type == CURSOR:</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '130536795880320')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v130536795880320">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>chunk_size</td>
+                    <td class="code"><pre>100</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>chunked_fetch</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>cursor</td>
+                    <td class="code"><pre>&lt;django.db.backends.utils.CursorDebugWrapper object at 0x76b8f75920d0&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>params</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>result_type</td>
+                    <td class="code"><pre>&#x27;single&#x27;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.models.sql.compiler.SQLCompiler object at 0x76b8f7590690&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>sql</td>
+                    <td class="code"><pre>&#x27;SELECT COUNT(*) AS &quot;__count&quot; FROM &quot;djangoapp_carmake&quot;&#x27;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/backends/utils.py</code>, line 98, in execute
+          
+
+          
+            <div class="context" id="c130536795879808">
+              
+                <ol start="91" class="pre-context" id="pre130536795879808">
+                
+                  <li onclick="toggle('pre130536795879808', 'post130536795879808')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre130536795879808', 'post130536795879808')"><pre>class CursorDebugWrapper(CursorWrapper):</pre></li>
+                
+                  <li onclick="toggle('pre130536795879808', 'post130536795879808')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre130536795879808', 'post130536795879808')"><pre>    # XXX callproc isn&#x27;t instrumented at this time.</pre></li>
+                
+                  <li onclick="toggle('pre130536795879808', 'post130536795879808')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre130536795879808', 'post130536795879808')"><pre>    def execute(self, sql, params=None):</pre></li>
+                
+                  <li onclick="toggle('pre130536795879808', 'post130536795879808')"><pre>        with self.debug_sql(sql, params, use_last_executed_query=True):</pre></li>
+                
+                </ol>
+              
+              <ol start="98" class="context-line">
+                <li onclick="toggle('pre130536795879808', 'post130536795879808')"><pre>            return super().execute(sql, params)</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='99' class="post-context" id="post130536795879808">
+                  
+                  <li onclick="toggle('pre130536795879808', 'post130536795879808')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre130536795879808', 'post130536795879808')"><pre>    def executemany(self, sql, param_list):</pre></li>
+                  
+                  <li onclick="toggle('pre130536795879808', 'post130536795879808')"><pre>        with self.debug_sql(sql, param_list, many=True):</pre></li>
+                  
+                  <li onclick="toggle('pre130536795879808', 'post130536795879808')"><pre>            return super().executemany(sql, param_list)</pre></li>
+                  
+                  <li onclick="toggle('pre130536795879808', 'post130536795879808')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre130536795879808', 'post130536795879808')"><pre>    @contextmanager</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '130536795879808')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v130536795879808">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>__class__</td>
+                    <td class="code"><pre>&lt;class &#x27;django.db.backends.utils.CursorDebugWrapper&#x27;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>params</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.backends.utils.CursorDebugWrapper object at 0x76b8f75920d0&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>sql</td>
+                    <td class="code"><pre>&#x27;SELECT COUNT(*) AS &quot;__count&quot; FROM &quot;djangoapp_carmake&quot;&#x27;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/backends/utils.py</code>, line 66, in execute
+          
+
+          
+            <div class="context" id="c130536795879360">
+              
+                <ol start="59" class="pre-context" id="pre130536795879360">
+                
+                  <li onclick="toggle('pre130536795879360', 'post130536795879360')"><pre>            elif kparams is None:</pre></li>
+                
+                  <li onclick="toggle('pre130536795879360', 'post130536795879360')"><pre>                return self.cursor.callproc(procname, params)</pre></li>
+                
+                  <li onclick="toggle('pre130536795879360', 'post130536795879360')"><pre>            else:</pre></li>
+                
+                  <li onclick="toggle('pre130536795879360', 'post130536795879360')"><pre>                params = params or ()</pre></li>
+                
+                  <li onclick="toggle('pre130536795879360', 'post130536795879360')"><pre>                return self.cursor.callproc(procname, params, kparams)</pre></li>
+                
+                  <li onclick="toggle('pre130536795879360', 'post130536795879360')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre130536795879360', 'post130536795879360')"><pre>    def execute(self, sql, params=None):</pre></li>
+                
+                </ol>
+              
+              <ol start="66" class="context-line">
+                <li onclick="toggle('pre130536795879360', 'post130536795879360')"><pre>        return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='67' class="post-context" id="post130536795879360">
+                  
+                  <li onclick="toggle('pre130536795879360', 'post130536795879360')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre130536795879360', 'post130536795879360')"><pre>    def executemany(self, sql, param_list):</pre></li>
+                  
+                  <li onclick="toggle('pre130536795879360', 'post130536795879360')"><pre>        return self._execute_with_wrappers(sql, param_list, many=True, executor=self._executemany)</pre></li>
+                  
+                  <li onclick="toggle('pre130536795879360', 'post130536795879360')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre130536795879360', 'post130536795879360')"><pre>    def _execute_with_wrappers(self, sql, params, many, executor):</pre></li>
+                  
+                  <li onclick="toggle('pre130536795879360', 'post130536795879360')"><pre>        context = {&#x27;connection&#x27;: self.db, &#x27;cursor&#x27;: self}</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '130536795879360')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v130536795879360">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>params</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.backends.utils.CursorDebugWrapper object at 0x76b8f75920d0&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>sql</td>
+                    <td class="code"><pre>&#x27;SELECT COUNT(*) AS &quot;__count&quot; FROM &quot;djangoapp_carmake&quot;&#x27;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/backends/utils.py</code>, line 75, in _execute_with_wrappers
+          
+
+          
+            <div class="context" id="c130536795880768">
+              
+                <ol start="68" class="pre-context" id="pre130536795880768">
+                
+                  <li onclick="toggle('pre130536795880768', 'post130536795880768')"><pre>    def executemany(self, sql, param_list):</pre></li>
+                
+                  <li onclick="toggle('pre130536795880768', 'post130536795880768')"><pre>        return self._execute_with_wrappers(sql, param_list, many=True, executor=self._executemany)</pre></li>
+                
+                  <li onclick="toggle('pre130536795880768', 'post130536795880768')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre130536795880768', 'post130536795880768')"><pre>    def _execute_with_wrappers(self, sql, params, many, executor):</pre></li>
+                
+                  <li onclick="toggle('pre130536795880768', 'post130536795880768')"><pre>        context = {&#x27;connection&#x27;: self.db, &#x27;cursor&#x27;: self}</pre></li>
+                
+                  <li onclick="toggle('pre130536795880768', 'post130536795880768')"><pre>        for wrapper in reversed(self.db.execute_wrappers):</pre></li>
+                
+                  <li onclick="toggle('pre130536795880768', 'post130536795880768')"><pre>            executor = functools.partial(wrapper, executor)</pre></li>
+                
+                </ol>
+              
+              <ol start="75" class="context-line">
+                <li onclick="toggle('pre130536795880768', 'post130536795880768')"><pre>        return executor(sql, params, many, context)</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='76' class="post-context" id="post130536795880768">
+                  
+                  <li onclick="toggle('pre130536795880768', 'post130536795880768')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre130536795880768', 'post130536795880768')"><pre>    def _execute(self, sql, params, *ignored_wrapper_args):</pre></li>
+                  
+                  <li onclick="toggle('pre130536795880768', 'post130536795880768')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
+                  
+                  <li onclick="toggle('pre130536795880768', 'post130536795880768')"><pre>        with self.db.wrap_database_errors:</pre></li>
+                  
+                  <li onclick="toggle('pre130536795880768', 'post130536795880768')"><pre>            if params is None:</pre></li>
+                  
+                  <li onclick="toggle('pre130536795880768', 'post130536795880768')"><pre>                # params default might be backend specific.</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '130536795880768')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v130536795880768">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>context</td>
+                    <td class="code"><pre>{&#x27;connection&#x27;: &lt;django.db.backends.sqlite3.base.DatabaseWrapper object at 0x76b8f7591110&gt;,
+ &#x27;cursor&#x27;: &lt;django.db.backends.utils.CursorDebugWrapper object at 0x76b8f75920d0&gt;}</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>executor</td>
+                    <td class="code"><pre>&lt;bound method CursorWrapper._execute of &lt;django.db.backends.utils.CursorDebugWrapper object at 0x76b8f75920d0&gt;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>many</td>
+                    <td class="code"><pre>False</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>params</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.backends.utils.CursorDebugWrapper object at 0x76b8f75920d0&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>sql</td>
+                    <td class="code"><pre>&#x27;SELECT COUNT(*) AS &quot;__count&quot; FROM &quot;djangoapp_carmake&quot;&#x27;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/backends/utils.py</code>, line 79, in _execute
+          
+
+          
+            <div class="context" id="c130536795879168">
+              
+                <ol start="72" class="pre-context" id="pre130536795879168">
+                
+                  <li onclick="toggle('pre130536795879168', 'post130536795879168')"><pre>        context = {&#x27;connection&#x27;: self.db, &#x27;cursor&#x27;: self}</pre></li>
+                
+                  <li onclick="toggle('pre130536795879168', 'post130536795879168')"><pre>        for wrapper in reversed(self.db.execute_wrappers):</pre></li>
+                
+                  <li onclick="toggle('pre130536795879168', 'post130536795879168')"><pre>            executor = functools.partial(wrapper, executor)</pre></li>
+                
+                  <li onclick="toggle('pre130536795879168', 'post130536795879168')"><pre>        return executor(sql, params, many, context)</pre></li>
+                
+                  <li onclick="toggle('pre130536795879168', 'post130536795879168')"><pre></pre></li>
+                
+                  <li onclick="toggle('pre130536795879168', 'post130536795879168')"><pre>    def _execute(self, sql, params, *ignored_wrapper_args):</pre></li>
+                
+                  <li onclick="toggle('pre130536795879168', 'post130536795879168')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
+                
+                </ol>
+              
+              <ol start="79" class="context-line">
+                <li onclick="toggle('pre130536795879168', 'post130536795879168')"><pre>        with self.db.wrap_database_errors:</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='80' class="post-context" id="post130536795879168">
+                  
+                  <li onclick="toggle('pre130536795879168', 'post130536795879168')"><pre>            if params is None:</pre></li>
+                  
+                  <li onclick="toggle('pre130536795879168', 'post130536795879168')"><pre>                # params default might be backend specific.</pre></li>
+                  
+                  <li onclick="toggle('pre130536795879168', 'post130536795879168')"><pre>                return self.cursor.execute(sql)</pre></li>
+                  
+                  <li onclick="toggle('pre130536795879168', 'post130536795879168')"><pre>            else:</pre></li>
+                  
+                  <li onclick="toggle('pre130536795879168', 'post130536795879168')"><pre>                return self.cursor.execute(sql, params)</pre></li>
+                  
+                  <li onclick="toggle('pre130536795879168', 'post130536795879168')"><pre></pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '130536795879168')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v130536795879168">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>ignored_wrapper_args</td>
+                    <td class="code"><pre>(False,
+ {&#x27;connection&#x27;: &lt;django.db.backends.sqlite3.base.DatabaseWrapper object at 0x76b8f7591110&gt;,
+  &#x27;cursor&#x27;: &lt;django.db.backends.utils.CursorDebugWrapper object at 0x76b8f75920d0&gt;})</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>params</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.backends.utils.CursorDebugWrapper object at 0x76b8f75920d0&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>sql</td>
+                    <td class="code"><pre>&#x27;SELECT COUNT(*) AS &quot;__count&quot; FROM &quot;djangoapp_carmake&quot;&#x27;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/utils.py</code>, line 90, in __exit__
+          
+
+          
+            <div class="context" id="c130536795880960">
+              
+                <ol start="83" class="pre-context" id="pre130536795880960">
+                
+                  <li onclick="toggle('pre130536795880960', 'post130536795880960')"><pre>            db_exc_type = getattr(self.wrapper.Database, dj_exc_type.__name__)</pre></li>
+                
+                  <li onclick="toggle('pre130536795880960', 'post130536795880960')"><pre>            if issubclass(exc_type, db_exc_type):</pre></li>
+                
+                  <li onclick="toggle('pre130536795880960', 'post130536795880960')"><pre>                dj_exc_value = dj_exc_type(*exc_value.args)</pre></li>
+                
+                  <li onclick="toggle('pre130536795880960', 'post130536795880960')"><pre>                # Only set the &#x27;errors_occurred&#x27; flag for errors that may make</pre></li>
+                
+                  <li onclick="toggle('pre130536795880960', 'post130536795880960')"><pre>                # the connection unusable.</pre></li>
+                
+                  <li onclick="toggle('pre130536795880960', 'post130536795880960')"><pre>                if dj_exc_type not in (DataError, IntegrityError):</pre></li>
+                
+                  <li onclick="toggle('pre130536795880960', 'post130536795880960')"><pre>                    self.wrapper.errors_occurred = True</pre></li>
+                
+                </ol>
+              
+              <ol start="90" class="context-line">
+                <li onclick="toggle('pre130536795880960', 'post130536795880960')"><pre>                raise dj_exc_value.with_traceback(traceback) from exc_value</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='91' class="post-context" id="post130536795880960">
+                  
+                  <li onclick="toggle('pre130536795880960', 'post130536795880960')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre130536795880960', 'post130536795880960')"><pre>    def __call__(self, func):</pre></li>
+                  
+                  <li onclick="toggle('pre130536795880960', 'post130536795880960')"><pre>        # Note that we are intentionally not using @wraps here for performance</pre></li>
+                  
+                  <li onclick="toggle('pre130536795880960', 'post130536795880960')"><pre>        # reasons. Refs #21109.</pre></li>
+                  
+                  <li onclick="toggle('pre130536795880960', 'post130536795880960')"><pre>        def inner(*args, **kwargs):</pre></li>
+                  
+                  <li onclick="toggle('pre130536795880960', 'post130536795880960')"><pre>            with self:</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '130536795880960')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v130536795880960">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>db_exc_type</td>
+                    <td class="code"><pre>&lt;class &#x27;sqlite3.OperationalError&#x27;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>dj_exc_type</td>
+                    <td class="code"><pre>&lt;class &#x27;django.db.utils.OperationalError&#x27;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>dj_exc_value</td>
+                    <td class="code"><pre>OperationalError(&#x27;no such table: djangoapp_carmake&#x27;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>exc_type</td>
+                    <td class="code"><pre>&lt;class &#x27;sqlite3.OperationalError&#x27;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>exc_value</td>
+                    <td class="code"><pre>OperationalError(&#x27;no such table: djangoapp_carmake&#x27;)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.utils.DatabaseErrorWrapper object at 0x76b8f7591f10&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>traceback</td>
+                    <td class="code"><pre>&lt;traceback object at 0x76b8f7593f80&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/backends/utils.py</code>, line 84, in _execute
+          
+
+          
+            <div class="context" id="c130536795881344">
+              
+                <ol start="77" class="pre-context" id="pre130536795881344">
+                
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>    def _execute(self, sql, params, *ignored_wrapper_args):</pre></li>
+                
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
+                
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>        with self.db.wrap_database_errors:</pre></li>
+                
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>            if params is None:</pre></li>
+                
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>                # params default might be backend specific.</pre></li>
+                
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>                return self.cursor.execute(sql)</pre></li>
+                
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>            else:</pre></li>
+                
+                </ol>
+              
+              <ol start="84" class="context-line">
+                <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>                return self.cursor.execute(sql, params)</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='85' class="post-context" id="post130536795881344">
+                  
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>    def _executemany(self, sql, param_list, *ignored_wrapper_args):</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>        with self.db.wrap_database_errors:</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre>            return self.cursor.executemany(sql, param_list)</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881344', 'post130536795881344')"><pre></pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '130536795881344')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v130536795881344">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>ignored_wrapper_args</td>
+                    <td class="code"><pre>(False,
+ {&#x27;connection&#x27;: &lt;django.db.backends.sqlite3.base.DatabaseWrapper object at 0x76b8f7591110&gt;,
+  &#x27;cursor&#x27;: &lt;django.db.backends.utils.CursorDebugWrapper object at 0x76b8f75920d0&gt;})</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>params</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.backends.utils.CursorDebugWrapper object at 0x76b8f75920d0&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>sql</td>
+                    <td class="code"><pre>&#x27;SELECT COUNT(*) AS &quot;__count&quot; FROM &quot;djangoapp_carmake&quot;&#x27;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        
+        <li class="frame django">
+          
+            <code class="fname">/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py</code>, line 423, in execute
+          
+
+          
+            <div class="context" id="c130536795881216">
+              
+                <ol start="416" class="pre-context" id="pre130536795881216">
+                
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>    This fixes it -- but note that if you want to use a literal &quot;%s&quot; in a query,</pre></li>
+                
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>    you&#x27;ll need to use &quot;%%s&quot;.</pre></li>
+                
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>    &quot;&quot;&quot;</pre></li>
+                
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>    def execute(self, query, params=None):</pre></li>
+                
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>        if params is None:</pre></li>
+                
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>            return Database.Cursor.execute(self, query)</pre></li>
+                
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>        query = self.convert_query(query)</pre></li>
+                
+                </ol>
+              
+              <ol start="423" class="context-line">
+                <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>        return Database.Cursor.execute(self, query, params)</pre> <span>…</span></li>
+              </ol>
+              
+                <ol start='424' class="post-context" id="post130536795881216">
+                  
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>    def executemany(self, query, param_list):</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>        query = self.convert_query(query)</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>        return Database.Cursor.executemany(self, query, param_list)</pre></li>
+                  
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre></pre></li>
+                  
+                  <li onclick="toggle('pre130536795881216', 'post130536795881216')"><pre>    def convert_query(self, query):</pre></li>
+                  
+              </ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '130536795881216')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v130536795881216">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>params</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>query</td>
+                    <td class="code"><pre>&#x27;SELECT COUNT(*) AS &quot;__count&quot; FROM &quot;djangoapp_carmake&quot;&#x27;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.db.backends.sqlite3.base.SQLiteCursorWrapper object at 0x76b8f6445c70&gt;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+    </ul>
+  </div>
+  <form action="https://dpaste.com/" name="pasteform" id="pasteform" method="post">
+
+  <div id="pastebinTraceback" class="pastebin">
+    <input type="hidden" name="language" value="PythonConsole">
+    <input type="hidden" name="title"
+      value="OperationalError at /djangoapp/get_cars">
+    <input type="hidden" name="source" value="Django Dpaste Agent">
+    <input type="hidden" name="poster" value="Django">
+    <textarea name="content" id="traceback_area" cols="140" rows="25">
+Environment:
+
+
+Request Method: GET
+Request URL: http://localhost:8080/djangoapp/get_cars
+
+Django Version: 3.2.5
+Python Version: 3.11.14
+Installed Applications:
+[&#x27;djangoapp.apps.DjangoappConfig&#x27;,
+ &#x27;django.contrib.admin&#x27;,
+ &#x27;django.contrib.auth&#x27;,
+ &#x27;django.contrib.contenttypes&#x27;,
+ &#x27;django.contrib.sessions&#x27;,
+ &#x27;django.contrib.messages&#x27;,
+ &#x27;django.contrib.staticfiles&#x27;]
+Installed Middleware:
+[&#x27;django.middleware.security.SecurityMiddleware&#x27;,
+ &#x27;django.contrib.sessions.middleware.SessionMiddleware&#x27;,
+ &#x27;django.middleware.common.CommonMiddleware&#x27;,
+ &#x27;django.contrib.auth.middleware.AuthenticationMiddleware&#x27;,
+ &#x27;django.contrib.messages.middleware.MessageMiddleware&#x27;,
+ &#x27;django.middleware.clickjacking.XFrameOptionsMiddleware&#x27;]
+
+
+
+Traceback (most recent call last):
+  File "/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+
+The above exception (no such table: djangoapp_carmake) was the direct cause of the following exception:
+  File "/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/project/xrwvm-fullstack_developer_capstone/server/djangoapp/views.py", line 45, in get_cars
+    count = CarMake.objects.count()
+  File "/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/models/query.py", line 412, in count
+    return self.query.get_count(using=self.db)
+  File "/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 519, in get_count
+    number = obj.get_aggregation(using, [&#x27;__count&#x27;])[&#x27;__count&#x27;]
+  File "/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 504, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+
+Exception Type: OperationalError at /djangoapp/get_cars
+Exception Value: no such table: djangoapp_carmake
+</textarea>
+  <br><br>
+  <input type="submit" value="Share this traceback on a public website">
+  </div>
+</form>
+</div>
+
+
+
+<div id="requestinfo">
+  <h2>Request information</h2>
+
+
+  
+    <h3 id="user-info">USER</h3>
+    <p>AnonymousUser</p>
+  
+
+  <h3 id="get-info">GET</h3>
+  
+    <p>No GET data</p>
+  
+
+  <h3 id="post-info">POST</h3>
+  
+    <p>No POST data</p>
+  
+  <h3 id="files-info">FILES</h3>
+  
+    <p>No FILES data</p>
+  
+
+
+  <h3 id="cookie-info">COOKIES</h3>
+  
+    <p>No cookie data</p>
+  
+
+  <h3 id="meta-info">META</h3>
+  <table class="req">
+    <thead>
+      <tr>
+        <th>Variable</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td>AIRFLOW_PASSWORD</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ANONYMIZED_TELEMETRY</td>
+          <td class="code"><pre>&#x27;False&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ANTHROPIC_API_KEY</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CARGO_HOME</td>
+          <td class="code"><pre>&#x27;/usr/local/cargo&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CASSANDRA_PASSWORD</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CLASSPATH</td>
+          <td class="code"><pre>&#x27;/home/theia/dsdriver/tools/clpplus.jar:/home/theia/dsdriver/tools/jline-0.9.93.jar:/home/theia/dsdriver/tools/antlr-3.3-java.jar:/home/theia/dsdriver/java/db2jcc4.jar:/home/theia/dsdriver/java/sqlj4.zip:&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CONTENT_LENGTH</td>
+          <td class="code"><pre>&#x27;&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CONTENT_TYPE</td>
+          <td class="code"><pre>&#x27;text/plain&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEBIAN_FRONTEND</td>
+          <td class="code"><pre>&#x27;noninteractive&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DJANGO_SETTINGS_MODULE</td>
+          <td class="code"><pre>&#x27;djangoproj.settings&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DOCKER_CERT_PATH</td>
+          <td class="code"><pre>&#x27;/certs/client&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DOCKER_HOST</td>
+          <td class="code"><pre>&#x27;tcp://docker:2376&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DOCKER_MACHINE_NAME</td>
+          <td class="code"><pre>&#x27;theia&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DOCKER_TLS_VERIFY</td>
+          <td class="code"><pre>&#x27;1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DOTNET_CLI_TELEMETRY_OPTOUT</td>
+          <td class="code"><pre>&#x27;1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DOTNET_SKIP_FIRST_TIME_EXPERIENCE</td>
+          <td class="code"><pre>&#x27;1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>GATEWAY_INTERFACE</td>
+          <td class="code"><pre>&#x27;CGI/1.1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>GIT_EXEC_PATH</td>
+          <td class="code"><pre>&#x27;/usr/lib/git-core&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>GIT__CAN_USE_NO_OPTIONAL_LOCKS</td>
+          <td class="code"><pre>&#x27;true&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>GOARCH</td>
+          <td class="code"><pre>&#x27;amd64&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>GOOS</td>
+          <td class="code"><pre>&#x27;linux&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>GOPATH</td>
+          <td class="code"><pre>&#x27;/usr/local/go-packages&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>GOROOT</td>
+          <td class="code"><pre>&#x27;/usr/local/go&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>GO_VERSION</td>
+          <td class="code"><pre>&#x27;1.21.1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HOME</td>
+          <td class="code"><pre>&#x27;/home/theia&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HOSTNAME</td>
+          <td class="code"><pre>&#x27;theiadocker-kiptoolevi&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_ACCEPT</td>
+          <td class="code"><pre>&#x27;*/*&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_CONNECTION</td>
+          <td class="code"><pre>&#x27;close&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_HOST</td>
+          <td class="code"><pre>&#x27;localhost:8080&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_L5D_CLIENT_ID</td>
+          <td class="code"><pre>&#x27;jupyterhub-theiadockernext-0-uarp.jupyterhub-theiadockernext-0.serviceaccount.identity.linkerd.cluster.local&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_USER_AGENT</td>
+          <td class="code"><pre>&#x27;curl/7.81.0&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_X_FORWARDED_FOR</td>
+          <td class="code"><pre>&#x27;172.17.15.128&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_X_FORWARDED_HOST</td>
+          <td class="code"><pre>&#x27;kiptoolevi-8080.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_X_FORWARDED_PORT</td>
+          <td class="code"><pre>&#x27;443&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_X_FORWARDED_PROTO</td>
+          <td class="code"><pre>&#x27;https&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_X_FORWARDED_SCHEME</td>
+          <td class="code"><pre>&#x27;https&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_X_REAL_IP</td>
+          <td class="code"><pre>&#x27;172.17.15.128&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_X_REQUEST_ID</td>
+          <td class="code"><pre>&#x27;cadf6da29d2f6769258f8b389c46dc37&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_X_SCHEME</td>
+          <td class="code"><pre>&#x27;https&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_X_SN_BYPASS_OAUTH_TOKEN</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HUB_PORT</td>
+          <td class="code"><pre>&#x27;tcp://172.21.186.77:8081&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HUB_PORT_8081_TCP</td>
+          <td class="code"><pre>&#x27;tcp://172.21.186.77:8081&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HUB_PORT_8081_TCP_ADDR</td>
+          <td class="code"><pre>&#x27;172.21.186.77&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HUB_PORT_8081_TCP_PORT</td>
+          <td class="code"><pre>&#x27;8081&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HUB_PORT_8081_TCP_PROTO</td>
+          <td class="code"><pre>&#x27;tcp&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HUB_SERVICE_HOST</td>
+          <td class="code"><pre>&#x27;172.21.186.77&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HUB_SERVICE_PORT</td>
+          <td class="code"><pre>&#x27;8081&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HUB_SERVICE_PORT_HUB</td>
+          <td class="code"><pre>&#x27;8081&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>IBMCLOUD_API_KEY</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>IBMCLOUD_API_KEY_LOCATION</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>IBM_CLOUD_API_KEY</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>IBM_DB_HOME</td>
+          <td class="code"><pre>&#x27;/home/theia/dsdriver/&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>JAVA_HOME</td>
+          <td class="code"><pre>&#x27;/usr/lib/jvm/jdk-21.0.9-oracle-x64&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>JUPYTERHUB_THEIADOCKERNEXT_0_UARP_PORT</td>
+          <td class="code"><pre>&#x27;tcp://172.21.158.92:3000&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>JUPYTERHUB_THEIADOCKERNEXT_0_UARP_PORT_3000_TCP</td>
+          <td class="code"><pre>&#x27;tcp://172.21.158.92:3000&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>JUPYTERHUB_THEIADOCKERNEXT_0_UARP_PORT_3000_TCP_ADDR</td>
+          <td class="code"><pre>&#x27;172.21.158.92&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>JUPYTERHUB_THEIADOCKERNEXT_0_UARP_PORT_3000_TCP_PORT</td>
+          <td class="code"><pre>&#x27;3000&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>JUPYTERHUB_THEIADOCKERNEXT_0_UARP_PORT_3000_TCP_PROTO</td>
+          <td class="code"><pre>&#x27;tcp&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>JUPYTERHUB_THEIADOCKERNEXT_0_UARP_SERVICE_HOST</td>
+          <td class="code"><pre>&#x27;172.21.158.92&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>JUPYTERHUB_THEIADOCKERNEXT_0_UARP_SERVICE_PORT</td>
+          <td class="code"><pre>&#x27;3000&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>JUPYTERHUB_THEIADOCKERNEXT_0_UARP_SERVICE_PORT_HTTP</td>
+          <td class="code"><pre>&#x27;3000&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>KUBECONFIG</td>
+          <td class="code"><pre>&#x27;/etc/kube/config&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>KUBERNETES_PORT</td>
+          <td class="code"><pre>&#x27;tcp://172.21.0.1:443&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>KUBERNETES_PORT_443_TCP</td>
+          <td class="code"><pre>&#x27;tcp://172.21.0.1:443&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>KUBERNETES_PORT_443_TCP_ADDR</td>
+          <td class="code"><pre>&#x27;172.21.0.1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>KUBERNETES_PORT_443_TCP_PORT</td>
+          <td class="code"><pre>&#x27;443&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>KUBERNETES_PORT_443_TCP_PROTO</td>
+          <td class="code"><pre>&#x27;tcp&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>KUBERNETES_SERVICE_HOST</td>
+          <td class="code"><pre>&#x27;172.21.0.1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>KUBERNETES_SERVICE_PORT</td>
+          <td class="code"><pre>&#x27;443&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>KUBERNETES_SERVICE_PORT_HTTPS</td>
+          <td class="code"><pre>&#x27;443&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LC_CTYPE</td>
+          <td class="code"><pre>&#x27;C.UTF-8&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LD_LIBRARY_PATH</td>
+          <td class="code"><pre>&#x27;/home/theia/dsdriver/lib&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LESSCLOSE</td>
+          <td class="code"><pre>&#x27;/usr/bin/lesspipe %s %s&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LESSOPEN</td>
+          <td class="code"><pre>&#x27;| /usr/bin/lesspipe %s&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOCAL_GIT_DIRECTORY</td>
+          <td class="code"><pre>&#x27;/usr&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LS_COLORS</td>
+          <td class="code"><pre>&#x27;rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MONGO_PASSWORD</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>NODE_EXTRA_CA_CERTS</td>
+          <td class="code"><pre>&#x27;/etc/ssl/certs/ca-certificates.crt&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>OLDPWD</td>
+          <td class="code"><pre>&#x27;/home/project/xrwvm-fullstack_developer_capstone/server&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>OPENAI_API_KEY</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PATH</td>
+          <td class="code"><pre>&#x27;/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/bin:/home/theia/.rbenv/shims:/home/theia/.rbenv/bin:/home/theia/.rbenv/shims:/home/theia/.rbenv/bin:/etc/flutter/flutter/bin:/home/theia/dsdriver/adm:/home/theia/dsdriver/bin:/usr/local/cargo/bin:/usr/local/go/bin:/usr/local/go-packages/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go-packages/bin:/usr/local/apache-maven-3.9.11/bin:/home/theia/.local/bin&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PATH_INFO</td>
+          <td class="code"><pre>&#x27;/djangoapp/get_cars&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PGPASSWORD</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PKG_CONFIG_PATH</td>
+          <td class="code"><pre>&#x27;/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/lib/pkgconfig:&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>POSTGRES_PASSWORD</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PRELAUNCH_K8S</td>
+          <td class="code"><pre>&#x27;true&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROXY_API_PORT</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROXY_API_PORT_8001_TCP</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROXY_API_PORT_8001_TCP_ADDR</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROXY_API_PORT_8001_TCP_PORT</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROXY_API_PORT_8001_TCP_PROTO</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROXY_API_SERVICE_HOST</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROXY_API_SERVICE_PORT</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROXY_DOMAIN</td>
+          <td class="code"><pre>&#x27;theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROXY_PUBLIC_PORT</td>
+          <td class="code"><pre>&#x27;tcp://172.21.110.91:80&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROXY_PUBLIC_PORT_80_TCP</td>
+          <td class="code"><pre>&#x27;tcp://172.21.110.91:80&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROXY_PUBLIC_PORT_80_TCP_ADDR</td>
+          <td class="code"><pre>&#x27;172.21.110.91&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROXY_PUBLIC_PORT_80_TCP_PORT</td>
+          <td class="code"><pre>&#x27;80&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROXY_PUBLIC_PORT_80_TCP_PROTO</td>
+          <td class="code"><pre>&#x27;tcp&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROXY_PUBLIC_SERVICE_HOST</td>
+          <td class="code"><pre>&#x27;172.21.110.91&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROXY_PUBLIC_SERVICE_PORT</td>
+          <td class="code"><pre>&#x27;80&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROXY_PUBLIC_SERVICE_PORT_HTTP</td>
+          <td class="code"><pre>&#x27;80&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PS1</td>
+          <td class="code"><pre>(&#x27;(djangoenv) \\[\\e]0;\\u@\\h: &#x27;
+ &#x27;\\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ &#x27;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PUKE_BASE_URL</td>
+          <td class="code"><pre>&#x27;https://private-puke.labs.skills.network&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PUKE_TOKEN</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PWD</td>
+          <td class="code"><pre>&#x27;/home/project/xrwvm-fullstack_developer_capstone/server&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>QUERY_STRING</td>
+          <td class="code"><pre>&#x27;&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>RBENV_SHELL</td>
+          <td class="code"><pre>&#x27;bash&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>REMOTE_ADDR</td>
+          <td class="code"><pre>&#x27;127.0.0.1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>REMOTE_HOST</td>
+          <td class="code"><pre>&#x27;&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>REQUESTS_CA_BUNDLE</td>
+          <td class="code"><pre>&#x27;/etc/ssl/certs/ca-certificates.crt&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>REQUEST_METHOD</td>
+          <td class="code"><pre>&#x27;GET&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>RUN_MAIN</td>
+          <td class="code"><pre>&#x27;true&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>RUSTUP_HOME</td>
+          <td class="code"><pre>&#x27;/usr/local/rustup&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SCRIPT_NAME</td>
+          <td class="code"><pre>&#x27;&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_NAME</td>
+          <td class="code"><pre>&#x27;localhost&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_PORT</td>
+          <td class="code"><pre>&#x27;8080&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_PROTOCOL</td>
+          <td class="code"><pre>&#x27;HTTP/1.1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_SOFTWARE</td>
+          <td class="code"><pre>&#x27;WSGIServer/0.2&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SHELL</td>
+          <td class="code"><pre>&#x27;/bin/bash&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SHLVL</td>
+          <td class="code"><pre>&#x27;2&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SN_ICR_NAMESPACE</td>
+          <td class="code"><pre>&#x27;sn-labs-kiptoolevi&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SN_KUBECTL_CONTEXT</td>
+          <td class="code"><pre>&#x27;kiptoolevi-context&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SSL_CERT_FILE</td>
+          <td class="code"><pre>&#x27;/etc/ssl/certs/ca-certificates.crt&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TERM</td>
+          <td class="code"><pre>&#x27;xterm-color&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>THEIA_APP_PROJECT_PATH</td>
+          <td class="code"><pre>&#x27;/home/theia/applications/browser&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>THEIA_CONFIG_DIR</td>
+          <td class="code"><pre>&#x27;/home/theia/.theia&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>THEIA_DEFAULT_PLUGINS</td>
+          <td class="code"><pre>&#x27;local-dir:/home/theia/applications/browser/plugins&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>THEIA_LOCAL_PORT</td>
+          <td class="code"><pre>&#x27;5309&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TOOL_DOMAIN</td>
+          <td class="code"><pre>&#x27;theiadockernext-0-labs-prod-theiak8s-4-tor01.labs.cognitiveclass.ai&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TZ</td>
+          <td class="code"><pre>&#x27;UTC&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USERNAME</td>
+          <td class="code"><pre>&#x27;kiptoolevi&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USER_ACCESS_TOKEN</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USER_NATS_TOKEN</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_LOCAL_GIT</td>
+          <td class="code"><pre>&#x27;true&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>VIRTUAL_ENV</td>
+          <td class="code"><pre>&#x27;/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>VIRTUAL_ENV_PROMPT</td>
+          <td class="code"><pre>&#x27;(djangoenv) &#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>VSCODE_API_VERSION</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>WATSONX_AI_AUTH_TYPE</td>
+          <td class="code"><pre>&#x27;bearertoken&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>WATSONX_AI_BEARER_TOKEN</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>WATSONX_APIKEY</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>WATSONX_API_KEY</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>WATSONX_PROJECT_ID</td>
+          <td class="code"><pre>&#x27;skills-network&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>WATSONX_TOKEN</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>_</td>
+          <td class="code"><pre>&#x27;/home/project/xrwvm-fullstack_developer_capstone/server/djangoenv/bin/python3&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>_AIRFLOW_WWW_USER_PASSWORD</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.errors</td>
+          <td class="code"><pre>&lt;_io.TextIOWrapper name=&#x27;&lt;stderr&gt;&#x27; mode=&#x27;w&#x27; encoding=&#x27;utf-8&#x27;&gt;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.file_wrapper</td>
+          <td class="code"><pre>&lt;class &#x27;wsgiref.util.FileWrapper&#x27;&gt;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.input</td>
+          <td class="code"><pre>&lt;django.core.handlers.wsgi.LimitedStream object at 0x76b8f7590b10&gt;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.multiprocess</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.multithread</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.run_once</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.url_scheme</td>
+          <td class="code"><pre>&#x27;http&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.version</td>
+          <td class="code"><pre>(1, 0)</pre></td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+  <h3 id="settings-info">Settings</h3>
+  <h4>Using settings module <code>djangoproj.settings</code></h4>
+  <table class="req">
+    <thead>
+      <tr>
+        <th>Setting</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td>ABSOLUTE_URL_OVERRIDES</td>
+          <td class="code"><pre>{}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ADMINS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ALLOWED_HOSTS</td>
+          <td class="code"><pre>[&#x27;127.0.0.1&#x27;,
+ &#x27;localhost&#x27;,
+ &#x27;kiptoolevi-8000.theidockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai&#x27;,
+ &#x27;kiptoolevi-8080.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>APPEND_SLASH</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>AUTHENTICATION_BACKENDS</td>
+          <td class="code"><pre>[&#x27;django.contrib.auth.backends.ModelBackend&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>AUTH_PASSWORD_VALIDATORS</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>AUTH_USER_MODEL</td>
+          <td class="code"><pre>&#x27;auth.User&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>BASE_DIR</td>
+          <td class="code"><pre>PosixPath(&#x27;/home/project/xrwvm-fullstack_developer_capstone/server&#x27;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CACHES</td>
+          <td class="code"><pre>{&#x27;default&#x27;: {&#x27;BACKEND&#x27;: &#x27;django.core.cache.backends.locmem.LocMemCache&#x27;}}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CACHE_MIDDLEWARE_ALIAS</td>
+          <td class="code"><pre>&#x27;default&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CACHE_MIDDLEWARE_KEY_PREFIX</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CACHE_MIDDLEWARE_SECONDS</td>
+          <td class="code"><pre>600</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_AGE</td>
+          <td class="code"><pre>31449600</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_DOMAIN</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_HTTPONLY</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_NAME</td>
+          <td class="code"><pre>&#x27;csrftoken&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_PATH</td>
+          <td class="code"><pre>&#x27;/&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_SAMESITE</td>
+          <td class="code"><pre>&#x27;Lax&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_SECURE</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_FAILURE_VIEW</td>
+          <td class="code"><pre>&#x27;django.views.csrf.csrf_failure&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_HEADER_NAME</td>
+          <td class="code"><pre>&#x27;HTTP_X_CSRFTOKEN&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_TRUSTED_ORIGINS</td>
+          <td class="code"><pre>[&#x27;https://kiptoolevi-8000.theidockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai&#x27;,
+ &#x27;https://kiptoolevi-8080.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_USE_SESSIONS</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATABASES</td>
+          <td class="code"><pre>{&#x27;default&#x27;: {&#x27;ATOMIC_REQUESTS&#x27;: False,
+             &#x27;AUTOCOMMIT&#x27;: True,
+             &#x27;CONN_MAX_AGE&#x27;: 0,
+             &#x27;ENGINE&#x27;: &#x27;django.db.backends.sqlite3&#x27;,
+             &#x27;HOST&#x27;: &#x27;&#x27;,
+             &#x27;NAME&#x27;: PosixPath(&#x27;/home/project/xrwvm-fullstack_developer_capstone/server/db.sqlite3&#x27;),
+             &#x27;OPTIONS&#x27;: {},
+             &#x27;PASSWORD&#x27;: &#x27;********************&#x27;,
+             &#x27;PORT&#x27;: &#x27;&#x27;,
+             &#x27;TEST&#x27;: {&#x27;CHARSET&#x27;: None,
+                      &#x27;COLLATION&#x27;: None,
+                      &#x27;MIGRATE&#x27;: True,
+                      &#x27;MIRROR&#x27;: None,
+                      &#x27;NAME&#x27;: None},
+             &#x27;TIME_ZONE&#x27;: None,
+             &#x27;USER&#x27;: &#x27;&#x27;}}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATABASE_ROUTERS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATA_UPLOAD_MAX_MEMORY_SIZE</td>
+          <td class="code"><pre>2621440</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATA_UPLOAD_MAX_NUMBER_FIELDS</td>
+          <td class="code"><pre>1000</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATETIME_FORMAT</td>
+          <td class="code"><pre>&#x27;N j, Y, P&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATETIME_INPUT_FORMATS</td>
+          <td class="code"><pre>[&#x27;%Y-%m-%d %H:%M:%S&#x27;,
+ &#x27;%Y-%m-%d %H:%M:%S.%f&#x27;,
+ &#x27;%Y-%m-%d %H:%M&#x27;,
+ &#x27;%m/%d/%Y %H:%M:%S&#x27;,
+ &#x27;%m/%d/%Y %H:%M:%S.%f&#x27;,
+ &#x27;%m/%d/%Y %H:%M&#x27;,
+ &#x27;%m/%d/%y %H:%M:%S&#x27;,
+ &#x27;%m/%d/%y %H:%M:%S.%f&#x27;,
+ &#x27;%m/%d/%y %H:%M&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATE_FORMAT</td>
+          <td class="code"><pre>&#x27;N j, Y&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATE_INPUT_FORMATS</td>
+          <td class="code"><pre>[&#x27;%Y-%m-%d&#x27;,
+ &#x27;%m/%d/%Y&#x27;,
+ &#x27;%m/%d/%y&#x27;,
+ &#x27;%b %d %Y&#x27;,
+ &#x27;%b %d, %Y&#x27;,
+ &#x27;%d %b %Y&#x27;,
+ &#x27;%d %b, %Y&#x27;,
+ &#x27;%B %d %Y&#x27;,
+ &#x27;%B %d, %Y&#x27;,
+ &#x27;%d %B %Y&#x27;,
+ &#x27;%d %B, %Y&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEBUG</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEBUG_PROPAGATE_EXCEPTIONS</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DECIMAL_SEPARATOR</td>
+          <td class="code"><pre>&#x27;.&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_AUTO_FIELD</td>
+          <td class="code"><pre>&#x27;django.db.models.BigAutoField&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_CHARSET</td>
+          <td class="code"><pre>&#x27;utf-8&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_EXCEPTION_REPORTER</td>
+          <td class="code"><pre>&#x27;django.views.debug.ExceptionReporter&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_EXCEPTION_REPORTER_FILTER</td>
+          <td class="code"><pre>&#x27;django.views.debug.SafeExceptionReporterFilter&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_FILE_STORAGE</td>
+          <td class="code"><pre>&#x27;django.core.files.storage.FileSystemStorage&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_FROM_EMAIL</td>
+          <td class="code"><pre>&#x27;webmaster@localhost&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_HASHING_ALGORITHM</td>
+          <td class="code"><pre>&#x27;sha256&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_INDEX_TABLESPACE</td>
+          <td class="code"><pre>&#x27;&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_TABLESPACE</td>
+          <td class="code"><pre>&#x27;&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DISALLOWED_USER_AGENTS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_BACKEND</td>
+          <td class="code"><pre>&#x27;django.core.mail.backends.smtp.EmailBackend&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_HOST</td>
+          <td class="code"><pre>&#x27;localhost&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_HOST_PASSWORD</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_HOST_USER</td>
+          <td class="code"><pre>&#x27;&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_PORT</td>
+          <td class="code"><pre>25</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_SSL_CERTFILE</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_SSL_KEYFILE</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_SUBJECT_PREFIX</td>
+          <td class="code"><pre>&#x27;[Django] &#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_TIMEOUT</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_USE_LOCALTIME</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_USE_SSL</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_USE_TLS</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_UPLOAD_DIRECTORY_PERMISSIONS</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_UPLOAD_HANDLERS</td>
+          <td class="code"><pre>[&#x27;django.core.files.uploadhandler.MemoryFileUploadHandler&#x27;,
+ &#x27;django.core.files.uploadhandler.TemporaryFileUploadHandler&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_UPLOAD_MAX_MEMORY_SIZE</td>
+          <td class="code"><pre>2621440</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_UPLOAD_PERMISSIONS</td>
+          <td class="code"><pre>420</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_UPLOAD_TEMP_DIR</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FIRST_DAY_OF_WEEK</td>
+          <td class="code"><pre>0</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FIXTURE_DIRS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FORCE_SCRIPT_NAME</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FORMAT_MODULE_PATH</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FORM_RENDERER</td>
+          <td class="code"><pre>&#x27;django.forms.renderers.DjangoTemplates&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>IGNORABLE_404_URLS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>INSTALLED_APPS</td>
+          <td class="code"><pre>[&#x27;djangoapp.apps.DjangoappConfig&#x27;,
+ &#x27;django.contrib.admin&#x27;,
+ &#x27;django.contrib.auth&#x27;,
+ &#x27;django.contrib.contenttypes&#x27;,
+ &#x27;django.contrib.sessions&#x27;,
+ &#x27;django.contrib.messages&#x27;,
+ &#x27;django.contrib.staticfiles&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>INTERNAL_IPS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGES</td>
+          <td class="code"><pre>[(&#x27;af&#x27;, &#x27;Afrikaans&#x27;),
+ (&#x27;ar&#x27;, &#x27;Arabic&#x27;),
+ (&#x27;ar-dz&#x27;, &#x27;Algerian Arabic&#x27;),
+ (&#x27;ast&#x27;, &#x27;Asturian&#x27;),
+ (&#x27;az&#x27;, &#x27;Azerbaijani&#x27;),
+ (&#x27;bg&#x27;, &#x27;Bulgarian&#x27;),
+ (&#x27;be&#x27;, &#x27;Belarusian&#x27;),
+ (&#x27;bn&#x27;, &#x27;Bengali&#x27;),
+ (&#x27;br&#x27;, &#x27;Breton&#x27;),
+ (&#x27;bs&#x27;, &#x27;Bosnian&#x27;),
+ (&#x27;ca&#x27;, &#x27;Catalan&#x27;),
+ (&#x27;cs&#x27;, &#x27;Czech&#x27;),
+ (&#x27;cy&#x27;, &#x27;Welsh&#x27;),
+ (&#x27;da&#x27;, &#x27;Danish&#x27;),
+ (&#x27;de&#x27;, &#x27;German&#x27;),
+ (&#x27;dsb&#x27;, &#x27;Lower Sorbian&#x27;),
+ (&#x27;el&#x27;, &#x27;Greek&#x27;),
+ (&#x27;en&#x27;, &#x27;English&#x27;),
+ (&#x27;en-au&#x27;, &#x27;Australian English&#x27;),
+ (&#x27;en-gb&#x27;, &#x27;British English&#x27;),
+ (&#x27;eo&#x27;, &#x27;Esperanto&#x27;),
+ (&#x27;es&#x27;, &#x27;Spanish&#x27;),
+ (&#x27;es-ar&#x27;, &#x27;Argentinian Spanish&#x27;),
+ (&#x27;es-co&#x27;, &#x27;Colombian Spanish&#x27;),
+ (&#x27;es-mx&#x27;, &#x27;Mexican Spanish&#x27;),
+ (&#x27;es-ni&#x27;, &#x27;Nicaraguan Spanish&#x27;),
+ (&#x27;es-ve&#x27;, &#x27;Venezuelan Spanish&#x27;),
+ (&#x27;et&#x27;, &#x27;Estonian&#x27;),
+ (&#x27;eu&#x27;, &#x27;Basque&#x27;),
+ (&#x27;fa&#x27;, &#x27;Persian&#x27;),
+ (&#x27;fi&#x27;, &#x27;Finnish&#x27;),
+ (&#x27;fr&#x27;, &#x27;French&#x27;),
+ (&#x27;fy&#x27;, &#x27;Frisian&#x27;),
+ (&#x27;ga&#x27;, &#x27;Irish&#x27;),
+ (&#x27;gd&#x27;, &#x27;Scottish Gaelic&#x27;),
+ (&#x27;gl&#x27;, &#x27;Galician&#x27;),
+ (&#x27;he&#x27;, &#x27;Hebrew&#x27;),
+ (&#x27;hi&#x27;, &#x27;Hindi&#x27;),
+ (&#x27;hr&#x27;, &#x27;Croatian&#x27;),
+ (&#x27;hsb&#x27;, &#x27;Upper Sorbian&#x27;),
+ (&#x27;hu&#x27;, &#x27;Hungarian&#x27;),
+ (&#x27;hy&#x27;, &#x27;Armenian&#x27;),
+ (&#x27;ia&#x27;, &#x27;Interlingua&#x27;),
+ (&#x27;id&#x27;, &#x27;Indonesian&#x27;),
+ (&#x27;ig&#x27;, &#x27;Igbo&#x27;),
+ (&#x27;io&#x27;, &#x27;Ido&#x27;),
+ (&#x27;is&#x27;, &#x27;Icelandic&#x27;),
+ (&#x27;it&#x27;, &#x27;Italian&#x27;),
+ (&#x27;ja&#x27;, &#x27;Japanese&#x27;),
+ (&#x27;ka&#x27;, &#x27;Georgian&#x27;),
+ (&#x27;kab&#x27;, &#x27;Kabyle&#x27;),
+ (&#x27;kk&#x27;, &#x27;Kazakh&#x27;),
+ (&#x27;km&#x27;, &#x27;Khmer&#x27;),
+ (&#x27;kn&#x27;, &#x27;Kannada&#x27;),
+ (&#x27;ko&#x27;, &#x27;Korean&#x27;),
+ (&#x27;ky&#x27;, &#x27;Kyrgyz&#x27;),
+ (&#x27;lb&#x27;, &#x27;Luxembourgish&#x27;),
+ (&#x27;lt&#x27;, &#x27;Lithuanian&#x27;),
+ (&#x27;lv&#x27;, &#x27;Latvian&#x27;),
+ (&#x27;mk&#x27;, &#x27;Macedonian&#x27;),
+ (&#x27;ml&#x27;, &#x27;Malayalam&#x27;),
+ (&#x27;mn&#x27;, &#x27;Mongolian&#x27;),
+ (&#x27;mr&#x27;, &#x27;Marathi&#x27;),
+ (&#x27;my&#x27;, &#x27;Burmese&#x27;),
+ (&#x27;nb&#x27;, &#x27;Norwegian Bokmål&#x27;),
+ (&#x27;ne&#x27;, &#x27;Nepali&#x27;),
+ (&#x27;nl&#x27;, &#x27;Dutch&#x27;),
+ (&#x27;nn&#x27;, &#x27;Norwegian Nynorsk&#x27;),
+ (&#x27;os&#x27;, &#x27;Ossetic&#x27;),
+ (&#x27;pa&#x27;, &#x27;Punjabi&#x27;),
+ (&#x27;pl&#x27;, &#x27;Polish&#x27;),
+ (&#x27;pt&#x27;, &#x27;Portuguese&#x27;),
+ (&#x27;pt-br&#x27;, &#x27;Brazilian Portuguese&#x27;),
+ (&#x27;ro&#x27;, &#x27;Romanian&#x27;),
+ (&#x27;ru&#x27;, &#x27;Russian&#x27;),
+ (&#x27;sk&#x27;, &#x27;Slovak&#x27;),
+ (&#x27;sl&#x27;, &#x27;Slovenian&#x27;),
+ (&#x27;sq&#x27;, &#x27;Albanian&#x27;),
+ (&#x27;sr&#x27;, &#x27;Serbian&#x27;),
+ (&#x27;sr-latn&#x27;, &#x27;Serbian Latin&#x27;),
+ (&#x27;sv&#x27;, &#x27;Swedish&#x27;),
+ (&#x27;sw&#x27;, &#x27;Swahili&#x27;),
+ (&#x27;ta&#x27;, &#x27;Tamil&#x27;),
+ (&#x27;te&#x27;, &#x27;Telugu&#x27;),
+ (&#x27;tg&#x27;, &#x27;Tajik&#x27;),
+ (&#x27;th&#x27;, &#x27;Thai&#x27;),
+ (&#x27;tk&#x27;, &#x27;Turkmen&#x27;),
+ (&#x27;tr&#x27;, &#x27;Turkish&#x27;),
+ (&#x27;tt&#x27;, &#x27;Tatar&#x27;),
+ (&#x27;udm&#x27;, &#x27;Udmurt&#x27;),
+ (&#x27;uk&#x27;, &#x27;Ukrainian&#x27;),
+ (&#x27;ur&#x27;, &#x27;Urdu&#x27;),
+ (&#x27;uz&#x27;, &#x27;Uzbek&#x27;),
+ (&#x27;vi&#x27;, &#x27;Vietnamese&#x27;),
+ (&#x27;zh-hans&#x27;, &#x27;Simplified Chinese&#x27;),
+ (&#x27;zh-hant&#x27;, &#x27;Traditional Chinese&#x27;)]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGES_BIDI</td>
+          <td class="code"><pre>[&#x27;he&#x27;, &#x27;ar&#x27;, &#x27;ar-dz&#x27;, &#x27;fa&#x27;, &#x27;ur&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_CODE</td>
+          <td class="code"><pre>&#x27;en-us&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_COOKIE_AGE</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_COOKIE_DOMAIN</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_COOKIE_HTTPONLY</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_COOKIE_NAME</td>
+          <td class="code"><pre>&#x27;django_language&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_COOKIE_PATH</td>
+          <td class="code"><pre>&#x27;/&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_COOKIE_SAMESITE</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_COOKIE_SECURE</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOCALE_PATHS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGGING</td>
+          <td class="code"><pre>{}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGGING_CONFIG</td>
+          <td class="code"><pre>&#x27;logging.config.dictConfig&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGIN_REDIRECT_URL</td>
+          <td class="code"><pre>&#x27;/accounts/profile/&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGIN_URL</td>
+          <td class="code"><pre>&#x27;/accounts/login/&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGOUT_REDIRECT_URL</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MANAGERS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MEDIA_ROOT</td>
+          <td class="code"><pre>&#x27;/home/project/xrwvm-fullstack_developer_capstone/server/media&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MEDIA_URL</td>
+          <td class="code"><pre>&#x27;/media/&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MESSAGE_STORAGE</td>
+          <td class="code"><pre>&#x27;django.contrib.messages.storage.fallback.FallbackStorage&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MIDDLEWARE</td>
+          <td class="code"><pre>[&#x27;django.middleware.security.SecurityMiddleware&#x27;,
+ &#x27;django.contrib.sessions.middleware.SessionMiddleware&#x27;,
+ &#x27;django.middleware.common.CommonMiddleware&#x27;,
+ &#x27;django.contrib.auth.middleware.AuthenticationMiddleware&#x27;,
+ &#x27;django.contrib.messages.middleware.MessageMiddleware&#x27;,
+ &#x27;django.middleware.clickjacking.XFrameOptionsMiddleware&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MIGRATION_MODULES</td>
+          <td class="code"><pre>{}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MONTH_DAY_FORMAT</td>
+          <td class="code"><pre>&#x27;F j&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>NUMBER_GROUPING</td>
+          <td class="code"><pre>0</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PASSWORD_HASHERS</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PASSWORD_RESET_TIMEOUT</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PASSWORD_RESET_TIMEOUT_DAYS</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PREPEND_WWW</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>REST_FRAMEWORK</td>
+          <td class="code"><pre>{&#x27;DEFAULT_AUTHENTICATION_CLASSES&#x27;: []}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ROOT_URLCONF</td>
+          <td class="code"><pre>&#x27;djangoproj.urls&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECRET_KEY</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_BROWSER_XSS_FILTER</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_CONTENT_TYPE_NOSNIFF</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_HSTS_INCLUDE_SUBDOMAINS</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_HSTS_PRELOAD</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_HSTS_SECONDS</td>
+          <td class="code"><pre>0</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_PROXY_SSL_HEADER</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_REDIRECT_EXEMPT</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_REFERRER_POLICY</td>
+          <td class="code"><pre>&#x27;same-origin&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_SSL_HOST</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECURE_SSL_REDIRECT</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_EMAIL</td>
+          <td class="code"><pre>&#x27;root@localhost&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_CACHE_ALIAS</td>
+          <td class="code"><pre>&#x27;default&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_AGE</td>
+          <td class="code"><pre>1209600</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_DOMAIN</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_HTTPONLY</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_NAME</td>
+          <td class="code"><pre>&#x27;sessionid&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_PATH</td>
+          <td class="code"><pre>&#x27;/&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_SAMESITE</td>
+          <td class="code"><pre>&#x27;Lax&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_SECURE</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_ENGINE</td>
+          <td class="code"><pre>&#x27;django.contrib.sessions.backends.db&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_EXPIRE_AT_BROWSER_CLOSE</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_FILE_PATH</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_SAVE_EVERY_REQUEST</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_SERIALIZER</td>
+          <td class="code"><pre>&#x27;django.contrib.sessions.serializers.JSONSerializer&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SETTINGS_MODULE</td>
+          <td class="code"><pre>&#x27;djangoproj.settings&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SHORT_DATETIME_FORMAT</td>
+          <td class="code"><pre>&#x27;m/d/Y P&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SHORT_DATE_FORMAT</td>
+          <td class="code"><pre>&#x27;m/d/Y&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SIGNING_BACKEND</td>
+          <td class="code"><pre>&#x27;django.core.signing.TimestampSigner&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SILENCED_SYSTEM_CHECKS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATICFILES_DIRS</td>
+          <td class="code"><pre>[&#x27;/home/project/xrwvm-fullstack_developer_capstone/server/frontend/static&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATICFILES_FINDERS</td>
+          <td class="code"><pre>[&#x27;django.contrib.staticfiles.finders.FileSystemFinder&#x27;,
+ &#x27;django.contrib.staticfiles.finders.AppDirectoriesFinder&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATICFILES_STORAGE</td>
+          <td class="code"><pre>&#x27;django.contrib.staticfiles.storage.StaticFilesStorage&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATIC_ROOT</td>
+          <td class="code"><pre>&#x27;/home/project/xrwvm-fullstack_developer_capstone/server/static&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATIC_URL</td>
+          <td class="code"><pre>&#x27;/static/&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TEMPLATES</td>
+          <td class="code"><pre>[{&#x27;APP_DIRS&#x27;: True,
+  &#x27;BACKEND&#x27;: &#x27;django.template.backends.django.DjangoTemplates&#x27;,
+  &#x27;DIRS&#x27;: [&#x27;/home/project/xrwvm-fullstack_developer_capstone/server/server/djangoapp/templates&#x27;],
+  &#x27;OPTIONS&#x27;: {&#x27;context_processors&#x27;: [&#x27;django.template.context_processors.debug&#x27;,
+                                     &#x27;django.template.context_processors.request&#x27;,
+                                     &#x27;django.contrib.auth.context_processors.auth&#x27;,
+                                     &#x27;django.contrib.messages.context_processors.messages&#x27;]}}]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TEST_NON_SERIALIZED_APPS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TEST_RUNNER</td>
+          <td class="code"><pre>&#x27;django.test.runner.DiscoverRunner&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>THOUSAND_SEPARATOR</td>
+          <td class="code"><pre>&#x27;,&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TIME_FORMAT</td>
+          <td class="code"><pre>&#x27;P&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TIME_INPUT_FORMATS</td>
+          <td class="code"><pre>[&#x27;%H:%M:%S&#x27;, &#x27;%H:%M:%S.%f&#x27;, &#x27;%H:%M&#x27;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TIME_ZONE</td>
+          <td class="code"><pre>&#x27;UTC&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_I18N</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_L10N</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_THOUSAND_SEPARATOR</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_TZ</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_X_FORWARDED_HOST</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_X_FORWARDED_PORT</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>WSGI_APPLICATION</td>
+          <td class="code"><pre>&#x27;djangoproj.wsgi.application&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>X_FRAME_OPTIONS</td>
+          <td class="code"><pre>&#x27;DENY&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>YEAR_MONTH_FORMAT</td>
+          <td class="code"><pre>&#x27;F Y&#x27;</pre></td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+</div>
+
+  <div id="explanation">
+    <p>
+      You’re seeing this error because you have <code>DEBUG = True</code> in your
+      Django settings file. Change that to <code>False</code>, and Django will
+      display a standard page generated by the handler for this status code.
+    </p>
+  </div>
+
+</body>
+</html>
