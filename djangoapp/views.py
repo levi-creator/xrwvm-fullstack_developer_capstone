@@ -12,9 +12,27 @@ from .restapis import get_request, post_review, analyze_review_sentiments
 logger = logging.getLogger(__name__)
 
 # -------------------------
+# Static page views
+# -------------------------
+def index(request):
+    """Render the main homepage."""
+    return render(request, "djangoapp/index.html")
+
+def home(request):
+    """Render the Home page."""
+    return render(request, "djangoapp/Home.html")
+
+def about(request):
+    """Render the About page."""
+    return render(request, "djangoapp/About.html")
+
+def contact(request):
+    """Render the Contact page."""
+    return render(request, "djangoapp/Contact.html")
+
+# -------------------------
 # Dealer-related views
 # -------------------------
-
 def get_dealerships(request, state="All"):
     try:
         if state == "All":
@@ -81,12 +99,6 @@ def get_cars(request):
     car_models = CarModel.objects.select_related('car_make')
     cars = [{"CarModel": cm.name, "CarMake": cm.car_make.name} for cm in car_models]
     return JsonResponse({"CarModels": cars})
-
-# -------------------------
-# Contact page view
-# -------------------------
-def contact_view(request):
-    return render(request, "Contact.html")
 
 # -------------------------
 # Review submission view

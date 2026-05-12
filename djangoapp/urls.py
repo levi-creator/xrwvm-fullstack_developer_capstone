@@ -7,11 +7,15 @@ app_name = 'djangoapp'
 
 urlpatterns = [
     # Car-related endpoints
+    path('', views.home, name='home'),
+    path('about/', views.about, name='about'),
+    path('index/', views.index, name='index'),
     path('get_cars', views.get_cars, name='get_cars'),
     path('get_local_cars', views.get_local_cars, name='get_local_cars'),
 
     # Contact page
-    path('contact', views.contact_view, name='contact'),
+    path('contact', views.contact, name='contact'),
+
 
     # Dealer-related endpoints
     path('get_dealers', views.get_dealerships, name='get_dealers'),

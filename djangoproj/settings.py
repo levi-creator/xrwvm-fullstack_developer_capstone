@@ -57,6 +57,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
+            os.path.join(BASE_DIR, 'frontend/static'),
             os.path.join(BASE_DIR, 'frontend', 'build'),   # React build output
             os.path.join(BASE_DIR, 'djangoproj', 'templates'),  # Django templates (login.html already exists here)
         ],
@@ -102,6 +103,7 @@ STATIC_URL = '/static/'
 
 # ✅ Correct static files setup
 STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'frontend/static'),
     os.path.join(BASE_DIR, 'frontend', 'build', 'static'),  # React build assets
 ]
 
@@ -109,5 +111,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+ALLOWED_HOSTS = ['localhost', 'kiptoolevi-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai']
+CSRF_TRUSTED_ORIGINS = ['https://kiptoolevi-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai']
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
