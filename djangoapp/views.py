@@ -14,21 +14,20 @@ logger = logging.getLogger(__name__)
 # -------------------------
 # Static page views
 # -------------------------
-def index(request):
-    """Render the main homepage."""
-    return render(request, "djangoapp/index.html")
-
-def home(request):
-    """Render the Home page."""
-    return render(request, "djangoapp/Home.html")
+from django.shortcuts import render
 
 def about(request):
-    """Render the About page."""
     return render(request, "djangoapp/About.html")
 
 def contact(request):
-    """Render the Contact page."""
     return render(request, "djangoapp/Contact.html")
+
+def index(request):
+    return render(request, "djangoapp/index.html")
+
+def home(request):
+    return render(request, "djangoapp/Home.html")
+
 
 # -------------------------
 # Dealer-related views
