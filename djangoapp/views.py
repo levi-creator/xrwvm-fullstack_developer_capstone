@@ -20,7 +20,7 @@ def about(request):
     return render(request, "djangoapp/About.html")
 
 def contact(request):
-    return render(request, "djangoapp/Contact.html")
+    return render(request, "Contact.html")
 
 def index(request):
     return render(request, "djangoapp/index.html")
