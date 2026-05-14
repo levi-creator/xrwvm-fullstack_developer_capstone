@@ -16,6 +16,8 @@ urlpatterns = [
     # Contact page
     path('contact', views.contact, name='contact'),
 
+    path('login', views.login_user, name='login'),
+
 
     # Dealer-related endpoints
     path('get_dealers', views.get_dealerships, name='get_dealers'),

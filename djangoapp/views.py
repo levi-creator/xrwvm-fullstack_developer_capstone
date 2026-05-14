@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
@@ -111,3 +112,16 @@ def add_review(request):
         result = post_review(data)
         return JsonResponse(result, safe=False)
     return JsonResponse({"error": "POST request required"}, status=400)
+@csrf_exempt
+def login_user(request):
+    if request.method == "POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return JsonResponse({"username": user.username, "status": "success"})
+        else:
+            return JsonResponse({"status": "failed"}, status=401)
+    return JsonResponse({"status": "invalid method"}, status=400)
+
