@@ -3,3 +3,12 @@ __pycache__/
 *.pyc
 *.log
 db.sqlite3
+# IDE and system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Additional environments
+venv/
+djangoenv/
