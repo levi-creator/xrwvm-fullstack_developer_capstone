@@ -77,25 +77,23 @@ app.get('/fetchDealer/:id', async (req, res) => {
   }
 });
 
-app.post('/insert_review', express.raw({ type: '*/*' }), async (req, res) => {
-  const data = JSON.parse(req.body);
-  const documents = await Review.find().sort({ id: -1 });
-  let new_id = documents[0]['id'] + 1;
-
-  const review = new Review({ id: new_id, ...data });
-
-  try {
-    Review.deleteMany({}).then(() => {
-      Review.insertMany(reviews_data['reviews']);
-    });
-    Dealership.deleteMany({}).then(() => {
-      Dealership.insertMany(dealerships_data['dealerships']);
-    });
-  } catch (error) {
-    console.error("Error seeding data:", error);
-  }
+app.post('/insert_review', express.json(), async (req, res) => {
+    try {
+      // Find the highest existing id
+      const documents = await Review.find().sort({ id: -1 });
+      let new_id = documents.length > 0 ? documents[0].id + 1 : 1;
   
-});
+      // Create new review
+      const review = new Review({ id: new_id, ...req.body });
+      await review.save();
+  
+      res.json({ status: "success", id: new_id });
+    } catch (error) {
+      console.error("Error inserting review:", error);
+      res.status(500).json({ error: "Error inserting review" });
+    }
+  });
+  
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
