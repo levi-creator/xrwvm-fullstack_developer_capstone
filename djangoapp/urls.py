@@ -19,7 +19,6 @@ urlpatterns = [
     path('add_review', views.add_review, name='add_review'),
     path('register', views.registration, name='register'),
 
-
     # Optional legacy static pages
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),

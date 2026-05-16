@@ -3,6 +3,7 @@
 
 import os
 from pathlib import Path
+import datetime
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -12,11 +13,12 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "kiptoolevi-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai"
+    # Allow all Skills Network Labs proxy subdomains
+    ".proxy.cognitiveclass.ai",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://kiptoolevi-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai"
+    "https://*.proxy.cognitiveclass.ai",
 ]
 
 INSTALLED_APPS = [
@@ -33,6 +35,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',  # ✅ ensure CSRF middleware is active
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
