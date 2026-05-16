@@ -2,6 +2,7 @@ import LoginPanel from "./components/Login/Login"
 import { Routes, Route } from "react-router-dom";
 import DealerDetails from "./components/DealerDetails";
 import Dealers from './components/Dealers/Dealers';
+import Register from "./components/Register/Register";
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Route path="/login" element={<LoginPanel />} />
       <Route path="/dealer/:id" element={<DealerDetails />} />
       <Route path="/dealers" element={<Dealers />} />
+      <Route path="/register" element={<Register />} />
 
     </Routes>
   );

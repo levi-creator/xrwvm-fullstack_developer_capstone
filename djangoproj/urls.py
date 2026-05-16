@@ -13,6 +13,7 @@ urlpatterns = [
     # -------------------------
     path('', TemplateView.as_view(template_name="index.html")),  # React homepage
     path('login/', TemplateView.as_view(template_name="index.html")),  # React login page
+    path('register/', TemplateView.as_view(template_name="index.html")),
 
     # -------------------------
     # Django app routes (mounted under /djangoapp/)

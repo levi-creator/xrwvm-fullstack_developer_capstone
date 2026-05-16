@@ -6,6 +6,7 @@ from django.conf import settings
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout as auth_logout
 from django.http import JsonResponse, FileResponse
+from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
 
 from .models import CarMake, CarModel
@@ -141,5 +142,34 @@ def login_user(request):
                 return JsonResponse({"status": "failed"}, status=401)
         except Exception as e:
             return JsonResponse({"status": "error", "message": str(e)}, status=400)
+    return JsonResponse({"status": "invalid method"}, status=400)
+
+@csrf_exempt
+def registration(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        username = data['userName']
+        password = data['password']
+        first_name = data['firstName']
+        last_name = data['lastName']
+        email = data['email']
+
+        # Check if username already exists
+        if User.objects.filter(username=username).exists():
+            return JsonResponse({"userName": username, "error": "Already Registered"})
+
+        # Create new user
+        user = User.objects.create_user(
+            username=username,
+            password=password,
+            first_name=first_name,
+            last_name=last_name,
+            email=email
+        )
+
+        # Log the user in immediately
+        login(request, user)
+        return JsonResponse({"userName": username, "status": "Authenticated"})
+
     return JsonResponse({"status": "invalid method"}, status=400)
 
