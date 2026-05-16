@@ -1,10 +1,12 @@
-from django.shortcuts import render
-from django.contrib.auth import authenticate, login, logout
-from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-
 import logging
 import json
+import os
+
+from django.conf import settings
+from django.shortcuts import render
+from django.contrib.auth import authenticate, login, logout as auth_logout
+from django.http import JsonResponse, FileResponse
+from django.views.decorators.csrf import csrf_exempt
 
 from .models import CarMake, CarModel
 from .populate import initiate
@@ -13,22 +15,30 @@ from .restapis import get_request, post_review, analyze_review_sentiments
 logger = logging.getLogger(__name__)
 
 # -------------------------
-# Static page views
+# React entry point
 # -------------------------
-from django.shortcuts import render
+def index(request):
+    # Serve React build index.html
+    return render(request, "index.html")
 
+# -------------------------
+# Manifest.json view
+# -------------------------
+def manifest(request):
+    path = os.path.join(settings.BASE_DIR, 'frontend/build/manifest.json')
+    return FileResponse(open(path, 'rb'), content_type='application/json')
+
+# -------------------------
+# Static page views (optional legacy templates)
+# -------------------------
 def about(request):
     return render(request, "djangoapp/About.html")
 
 def contact(request):
     return render(request, "Contact.html")
 
-def index(request):
-    return render(request, "djangoapp/index.html")
-
 def home(request):
     return render(request, "djangoapp/Home.html")
-
 
 # -------------------------
 # Dealer-related views
@@ -42,7 +52,6 @@ def get_dealerships(request, state="All"):
 
         dealerships = get_request(endpoint)
 
-        # ✅ Fallback sample data if API fails
         if not dealerships:
             dealerships = [
                 {"id": 1, "name": "Test Dealer", "state": "CA"},
@@ -101,8 +110,12 @@ def get_cars(request):
     return JsonResponse({"CarModels": cars})
 
 # -------------------------
-# Review submission view
+# Auth views
 # -------------------------
+def logout(request):
+    auth_logout(request)
+    return JsonResponse({"userName": ""})
+
 @csrf_exempt
 def add_review(request):
     if request.method == "POST":
@@ -112,16 +125,21 @@ def add_review(request):
         result = post_review(data)
         return JsonResponse(result, safe=False)
     return JsonResponse({"error": "POST request required"}, status=400)
+
 @csrf_exempt
 def login_user(request):
     if request.method == "POST":
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return JsonResponse({"username": user.username, "status": "success"})
-        else:
-            return JsonResponse({"status": "failed"}, status=401)
+        try:
+            data = json.loads(request.body)
+            username = data.get("username")
+            password = data.get("password")
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return JsonResponse({"userName": user.username, "status": "success"})
+            else:
+                return JsonResponse({"status": "failed"}, status=401)
+        except Exception as e:
+            return JsonResponse({"status": "error", "message": str(e)}, status=400)
     return JsonResponse({"status": "invalid method"}, status=400)
 
