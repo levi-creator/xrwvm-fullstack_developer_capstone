@@ -31,6 +31,7 @@ urlpatterns = [
     # Admin and contact
     # -------------------------
     path('admin/', admin.site.urls),
+    path('', include('djangoapp.urls')),
     path('contact/', TemplateView.as_view(template_name="djangoapp/Contact.html")),
 
     # -------------------------

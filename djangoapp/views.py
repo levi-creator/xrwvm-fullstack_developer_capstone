@@ -19,7 +19,6 @@ logger = logging.getLogger(__name__)
 # React entry point
 # -------------------------
 def index(request):
-    # Serve React build index.html
     return render(request, "index.html")
 
 # -------------------------
@@ -30,7 +29,7 @@ def manifest(request):
     return FileResponse(open(path, 'rb'), content_type='application/json')
 
 # -------------------------
-# Static page views (optional legacy templates)
+# Static page views
 # -------------------------
 def about(request):
     return render(request, "djangoapp/About.html")
@@ -47,19 +46,11 @@ def home(request):
 def get_dealerships(request, state="All"):
     try:
         if state == "All":
-            endpoint = "/get_dealers"
+            endpoint = "/fetchDealers"
         else:
-            endpoint = f"/get_dealers?state={state}"
+            endpoint = f"/fetchDealers/{state}"
 
-        dealerships = get_request(endpoint)
-
-        if not dealerships:
-            dealerships = [
-                {"id": 1, "name": "Test Dealer", "state": "CA"},
-                {"id": 2, "name": "Sample Motors", "state": "NY"},
-                {"id": 3, "name": "Demo Cars", "state": "TX"}
-            ]
-
+        dealerships = get_request(endpoint) or []
         logger.info("Dealerships data: %s", dealerships)
         return JsonResponse({"status": 200, "dealers": dealerships})
     except Exception as e:
@@ -67,23 +58,25 @@ def get_dealerships(request, state="All"):
         return JsonResponse({"status": 500, "message": "Internal Server Error"})
 
 def get_dealer_details(request, dealer_id):
-    if dealer_id:
-        endpoint = f"/get_dealer?dealerId={dealer_id}"
+    try:
+        endpoint = f"/fetchDealer/{dealer_id}"
         dealership = get_request(endpoint) or {"id": dealer_id, "name": "Fallback Dealer"}
         return JsonResponse({"status": 200, "dealer": dealership})
-    else:
-        return JsonResponse({"status": 400, "message": "Bad Request"})
+    except Exception as e:
+        logger.error("Error in get_dealer_details: %s", e)
+        return JsonResponse({"status": 500, "message": "Internal Server Error"})
 
 def get_dealer_reviews(request, dealer_id):
-    if dealer_id:
-        endpoint = f"/get_reviews?dealerId={dealer_id}"
-        reviews = get_request(endpoint) or [{"review": "Fallback review", "sentiment": "neutral"}]
+    try:
+        endpoint = f"/fetchReviews/dealer/{dealer_id}"
+        reviews = get_request(endpoint) or []
         for review_detail in reviews:
-            response = analyze_review_sentiments(review_detail.get('review', ''))
-            review_detail['sentiment'] = response.get('sentiment', 'neutral')
+            sentiment = analyze_review_sentiments(review_detail.get("review", ""))
+            review_detail["sentiment"] = sentiment.get("sentiment", "neutral")
         return JsonResponse({"status": 200, "reviews": reviews})
-    else:
-        return JsonResponse({"status": 400, "message": "Bad Request"})
+    except Exception as e:
+        logger.error("Error in get_dealer_reviews: %s", e)
+        return JsonResponse({"status": 500, "message": "Internal Server Error"})
 
 # -------------------------
 # Car-related views
@@ -154,11 +147,9 @@ def registration(request):
         last_name = data['lastName']
         email = data['email']
 
-        # Check if username already exists
         if User.objects.filter(username=username).exists():
             return JsonResponse({"userName": username, "error": "Already Registered"})
 
-        # Create new user
         user = User.objects.create_user(
             username=username,
             password=password,
@@ -167,9 +158,7 @@ def registration(request):
             email=email
         )
 
-        # Log the user in immediately
         login(request, user)
         return JsonResponse({"userName": username, "status": "Authenticated"})
 
     return JsonResponse({"status": "invalid method"}, status=400)
-

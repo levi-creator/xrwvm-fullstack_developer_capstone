@@ -4,11 +4,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# Base URL of Node API service (Docker Compose service name)
 backend_url = os.getenv(
     'backend_url',
-    default="https://kiptoolevi-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/"
+    default="http://api:3030"   # ✅ Node service name in docker-compose.yml
 )
 
+# Sentiment analyzer microservice (if available)
 sentiment_analyzer_url = os.getenv(
     'sentiment_analyzer_url',
     default="http://localhost:5050/"
@@ -23,7 +25,7 @@ def get_request(endpoint, **kwargs):
         return response.json()
     except Exception as e:
         print(f"Error in get_request: {e}")
-        return []  # ✅ fallback empty list
+        return []  # fallback empty list
 
 def analyze_review_sentiments(text):
     request_url = f"{sentiment_analyzer_url}analyze/{text}"

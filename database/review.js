@@ -1,44 +1,15 @@
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
-
-const reviews = new Schema({
-	id: {
-    type: Number,
-    required: true,
-	},
-	name: {
-    type: String,
-    required: true
-  },
-  dealership: {
-    type: Number,
-    required: true,
-  },
-  review: {
-    type: String,
-    required: true
-  },
-  purchase: {
-    type: Boolean,
-    required: true
-  },
-  purchase_date: {
-    type: String,
-    required: true
-  },
-  car_make: {
-    type: String,
-    required: true
-  },
-  car_model: {
-    type: String,
-    required: true
-  },
-  car_year: {
-    type: Number,
-    required: true
-  },
+const reviewSchema = new mongoose.Schema({
+  id: { type: Number, required: true },
+  dealership: { type: Number, required: true }, // ✅ matches your JSON payload
+  name: { type: String, required: true },
+  review: { type: String, required: true },
+  purchase: { type: Boolean, required: true },
+  purchase_date: { type: String },
+  car_make: { type: String },
+  car_model: { type: String },
+  car_year: { type: Number }
 });
 
-module.exports = mongoose.model('reviews', reviews);
+module.exports = mongoose.model('Review', reviewSchema);
