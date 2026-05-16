@@ -6,6 +6,7 @@ from django.contrib.auth import views as auth_views
 from django.views.generic import TemplateView
 from django.views.static import serve
 import os
+from djangoapp import views  # ✅ Import your app views
 
 urlpatterns = [
     # -------------------------
@@ -13,12 +14,18 @@ urlpatterns = [
     # -------------------------
     path('', TemplateView.as_view(template_name="index.html")),  # React homepage
     path('login/', TemplateView.as_view(template_name="index.html")),  # React login page
-    path('register/', TemplateView.as_view(template_name="index.html")),
+    path('register/', TemplateView.as_view(template_name="index.html")),  # React register page
+    path('logout/', TemplateView.as_view(template_name="index.html")),  # React logout page
 
     # -------------------------
     # Django app routes (mounted under /djangoapp/)
     # -------------------------
     path('djangoapp/', include('djangoapp.urls')),
+
+    # -------------------------
+    # Direct Django logout endpoint
+    # -------------------------
+    path('djangoapp/logout', views.logout, name='logout'),  # ✅ Add this line
 
     # -------------------------
     # Admin and contact
