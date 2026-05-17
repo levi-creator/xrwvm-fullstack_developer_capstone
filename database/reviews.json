@@ -1,0 +1,28 @@
+[
+  {
+    "_id": "6a099e11c3f476012a37e22e",
+    "id": 1,
+    "dealership": 1,
+    "name": "John Doe",
+    "review": "Great service and friendly staff!",
+    "purchase": true,
+    "purchase_date": "2024-05-01",
+    "car_make": "Toyota",
+    "car_model": "Corolla",
+    "car_year": 2022,
+    "sentiment": "neutral"
+  },
+  {
+    "_id": "6a099e11c3f476012a37e22f",
+    "id": 2,
+    "dealership": 1,
+    "name": "Jane Smith",
+    "review": "Quick and easy buying process.",
+    "purchase": true,
+    "purchase_date": "2024-06-15",
+    "car_make": "Honda",
+    "car_model": "Civic",
+    "car_year": 2023,
+    "sentiment": "neutral"
+  }
+]

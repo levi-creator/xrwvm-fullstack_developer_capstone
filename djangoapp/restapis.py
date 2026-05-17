@@ -1,50 +1,64 @@
 import requests
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
+# ✅ Backend URL (set in .env or fallback to localhost)
+backend_url = os.getenv("backend_url", "http://localhost:3030")
 
-# Base URL of Node API service (Docker Compose service name)
-backend_url = os.getenv(
-    'backend_url',
-    default="http://api:3030"   # ✅ Node service name in docker-compose.yml
-)
-
-# Sentiment analyzer microservice (if available)
-sentiment_analyzer_url = os.getenv(
-    'sentiment_analyzer_url',
-    default="http://localhost:5050/"
-)
-
+# -------------------------
+# GET request helper
+# -------------------------
 def get_request(endpoint, **kwargs):
-    url = backend_url + endpoint
-    print(f"GET from {url}")
-    try:
-        response = requests.get(url, params=kwargs)
-        response.raise_for_status()
-        return response.json()
-    except Exception as e:
-        print(f"Error in get_request: {e}")
-        return []  # fallback empty list
+    params = ""
+    if kwargs:
+        for key, value in kwargs.items():
+            params += f"{key}={value}&"
 
-def analyze_review_sentiments(text):
-    request_url = f"{sentiment_analyzer_url}analyze/{text}"
-    print(f"GET from {request_url}")
+    request_url = backend_url + endpoint
+    if params:
+        request_url += "?" + params
+
+    print("GET from {}".format(request_url))
     try:
         response = requests.get(request_url)
-        response.raise_for_status()
         return response.json()
     except Exception as e:
-        print("Sentiment analysis exception occurred:", e)
-        return {"sentiment": "neutral"}
+        print("Network exception occurred:", e)
+        return {"error": "Network exception"}
+
+# -------------------------
+# POST request helper
+# -------------------------
+def post_review(payload):
+    request_url = backend_url + "/postReview"   # <-- use this
+    print("POST to {}".format(request_url))
+    try:
+        response = requests.post(request_url, json=payload)
+        return response.json()
+    except Exception as e:
+        print("Network exception occurred:", e)
+        return {"error": "Network exception"}
 
 def post_review(data_dict):
-    request_url = f"{backend_url}/postReview"
-    print(f"POST to {request_url}")
+    request_url = backend_url + "/postReview"
     try:
         response = requests.post(request_url, json=data_dict)
-        response.raise_for_status()
+        print(response.json())  # Debugging output
         return response.json()
     except Exception as e:
         print("Network exception occurred:", e)
         return {"error": "Network exception occurred"}
+
+
+
+# -------------------------
+# Sentiment analysis helper
+# -------------------------
+def analyze_review_sentiments(text):
+    request_url = sentiment_analyzer_url + "analyze/" + text
+    try:
+        response = requests.get(request_url)
+        return response.json()
+    except Exception as err:
+        print(f"Unexpected {err=}, {type(err)=}")
+        print("Network exception occurred")
+

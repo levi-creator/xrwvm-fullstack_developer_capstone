@@ -1,20 +1,24 @@
 import json
 from pymongo import MongoClient
 
-# Connect to MongoDB (container service name is mongo_db in docker-compose.yml)
-client = MongoClient("mongodb://mongo_db:27017/")
+# ✅ Connect to MongoDB via localhost (since you're running from host)
+client = MongoClient("mongodb://localhost:27017/")
+
+# ✅ Select database
 db = client["dealershipsDB"]
 
-# Load dealers.json
-with open("dealers.json") as f:
-    dealers = json.load(f)
-    db.dealerships.delete_many({})
-    db.dealerships.insert_many(dealers)
-    print(f"Inserted {len(dealers)} dealers")
+# ✅ Clear existing collections
+db.dealerships.delete_many({})
+db.reviews.delete_many({})
 
-# Load reviews.json
+# ✅ Load dealers.json
+with open("dealers.json") as f:
+    dealers_data = json.load(f)
+db.dealerships.insert_many(dealers_data)
+
+# ✅ Load reviews.json
 with open("reviews.json") as f:
-    reviews = json.load(f)
-    db.reviews.delete_many({})
-    db.reviews.insert_many(reviews)
-    print(f"Inserted {len(reviews)} reviews")
+    reviews_data = json.load(f)
+db.reviews.insert_many(reviews_data)
+
+print("Database seeded successfully!")
