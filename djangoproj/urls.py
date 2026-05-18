@@ -21,6 +21,14 @@ urlpatterns = [
     # Django app routes (mounted under /djangoapp/)
     # -------------------------
     path('djangoapp/', include('djangoapp.urls')),
+    path("", TemplateView.as_view(template_name="index.html")),
+    path("home/", TemplateView.as_view(template_name="index.html")),
+    path("dealers/", TemplateView.as_view(template_name="index.html")),
+    path('dealers/', TemplateView.as_view(template_name="index.html")),
+    path('dealer/<int:dealer_id>/', TemplateView.as_view(template_name="index.html")),
+    path("djangoapp/get_dealerships", views.get_dealerships, name="get_dealerships"),
+
+
 
     # -------------------------
     # Direct Django logout endpoint

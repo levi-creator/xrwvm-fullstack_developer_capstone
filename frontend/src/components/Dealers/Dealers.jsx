@@ -8,9 +8,8 @@ const Dealers = () => {
   const [dealersList, setDealersList] = useState([]);
   const [states, setStates] = useState([]);
 
-  // Fetch dealers filtered by state
-  // For initial load
-const get_dealers = async () => {
+  // Fetch all dealers initially
+  const get_dealers = async () => {
     const res = await fetch("/djangoapp/get_dealers/All", { method: "GET" });
     const retobj = await res.json();
     if (retobj.status === 200) {
@@ -20,8 +19,8 @@ const get_dealers = async () => {
       setDealersList(all_dealers);
     }
   };
-  
-  // For filtering
+
+  // Fetch dealers filtered by state
   const filterDealers = async (state) => {
     const url = `/djangoapp/get_dealers/${state}`;
     const res = await fetch(url, { method: "GET" });
@@ -30,11 +29,19 @@ const get_dealers = async () => {
       setDealersList(Array.from(retobj.dealers));
     }
   };
+
+  // Load dealers on first render
+  useEffect(() => {
+    fetch("https://kiptoolevi-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/djangoapp/get_dealerships")
+      .then(response => response.json())
+      .then(data => {
+        console.log("Fetched dealers:", data);
+        setDealersList(data.dealers);
+      })
+      .catch(error => console.error("Error fetching dealers:", error));
+  }, []);
   
 
-  useEffect(() => {
-    get_dealers();
-  }, []);
 
   const isLoggedIn = sessionStorage.getItem("username") != null;
 
@@ -50,8 +57,12 @@ const get_dealers = async () => {
             <th>Address</th>
             <th>Zip</th>
             <th>
-              <select name="state" id="state" onChange={(e) => filterDealers(e.target.value)}>
-                <option value="" disabled hidden selected>State</option>
+              <select
+                name="state"
+                id="state"
+                onChange={(e) => filterDealers(e.target.value)}
+              >
+                <option value="" disabled hidden>State</option>
                 <option value="All">All States</option>
                 {states.map(state => (
                   <option key={state} value={state}>{state}</option>
@@ -73,7 +84,11 @@ const get_dealers = async () => {
               {isLoggedIn && (
                 <td>
                   <a href={`/postreview/${dealer.id}`}>
-                    <img src={review_icon} className="review_icon" alt="Post Review" />
+                    <img
+                      src={review_icon}
+                      className="review_icon"
+                      alt="Post Review"
+                    />
                   </a>
                 </td>
               )}

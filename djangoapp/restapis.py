@@ -1,5 +1,6 @@
 import requests
 import os
+import json
 
 # ✅ Backend URL (set in .env or fallback to localhost)
 backend_url = os.getenv("backend_url", "http://localhost:3030")
@@ -62,3 +63,9 @@ def analyze_review_sentiments(text):
         print(f"Unexpected {err=}, {type(err)=}")
         print("Network exception occurred")
 
+def get_request(url, **kwargs):
+    try:
+        response = requests.get(url, headers={'Content-Type': 'application/json'}, params=kwargs)
+        return json.loads(response.text)
+    except Exception as e:
+        return {"error": f"Network exception: {str(e)}"}

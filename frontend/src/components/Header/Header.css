@@ -1,0 +1,35 @@
+.header {
+  background-color: #2dd4bf;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+}
+
+.header .logo {
+  font-weight: bold;
+  color: #000;
+}
+
+.header nav a {
+  margin: 0 10px;
+  color: #000;
+  text-decoration: none;
+}
+
+.header nav a:hover {
+  text-decoration: underline;
+}
+
+.username {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+}
