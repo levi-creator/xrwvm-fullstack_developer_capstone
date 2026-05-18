@@ -12,3 +12,28 @@ Thumbs.db
 # Additional environments
 venv/
 djangoenv/
+
+# Virtual environment
+djangoenv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Django static and media
+staticfiles/
+media/
+
+# Environment variables
+.env
+
+# IDE settings
+.vscode/
+.idea/
+
+# Logs
+*.log
